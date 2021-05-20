@@ -43,7 +43,7 @@ public class Intro implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        this.file = new File("src/sample/gui/mainmenu/video.mp4");
+        this.file = new File("src/sample/gui/mainmenu/media/video.mp4");
         media = new Media(file.toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         Duration a = mediaPlayer.getStartTime();
@@ -57,7 +57,7 @@ public class Intro implements Initializable {
                     @Override
                     public void handle(Event event) {
                         try {
-                            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/sample/gui/mainmenu/mainFxml.fxml")));
+                            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/sample/gui/mainmenu/FXML/mainFxml.fxml")));
                             stage = (Stage) ((Node) Intro.this.mediaView).getScene().getWindow();
                             scene = new Scene(root);
                             stage.setScene(scene);
@@ -70,10 +70,10 @@ public class Intro implements Initializable {
                 };
                 Double duration = Double.valueOf(mediaPlayer.getStopTime().toMillis());
                 mediaPlayer.play();
-                Timeline tm0 = new Timeline(new KeyFrame(Duration.millis(2000),new KeyValue(mediaView.opacityProperty(),  0.0)));
+                Timeline tm0 = new Timeline(new KeyFrame(Duration.millis(1000),new KeyValue(mediaView.opacityProperty(),  0.0)));
                 tm0.setDelay(Duration.millis(duration));
                 tm0.play();
-                Timeline tm = new Timeline(new KeyFrame(Duration.millis(2005), event));
+                Timeline tm = new Timeline(new KeyFrame(Duration.millis(1000), event));
                 tm.setDelay(Duration.millis(duration));
                 tm.play();
             }

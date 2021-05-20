@@ -18,7 +18,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/sample/gui/mainmenu/intro.fxml")));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/sample/gui/mainmenu/FXML/intro.fxml")));
             primaryStage.setTitle("Virus");
             primaryStage.setResizable(false);
             primaryStage.initStyle(StageStyle.DECORATED);
