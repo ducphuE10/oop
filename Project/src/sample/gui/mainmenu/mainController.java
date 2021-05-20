@@ -17,7 +17,6 @@ import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 
 import javax.swing.*;
-import javax.swing.plaf.ColorUIResource;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -49,8 +48,9 @@ public class mainController implements Initializable {
     private VBox nonEnvelopeVirusView;
 
 
+
     public void initialize(URL arg0, ResourceBundle arg1) {
-        file = new File("src/sample/gui/mainmenu/background_music.mp3");
+        file = new File("src/sample/gui/mainmenu/media/background_music.mp3");
         Media media = new Media(file.toURI().toString());
         music = new MediaPlayer(media);
         music.setCycleCount(1000);
@@ -130,7 +130,12 @@ public class mainController implements Initializable {
                 JOptionPane.OK_CANCEL_OPTION);
         if (option == JOptionPane.YES_OPTION) {
             ((Stage) (((Button) e.getSource()).getScene().getWindow())).close();
+
         }
+    }
+    @FXML
+    void minimize(ActionEvent e){
+        ((Stage) (((Button) e.getSource()).getScene().getWindow())).setIconified(true);
     }
 
     @FXML
@@ -148,5 +153,6 @@ public class mainController implements Initializable {
         y = event.getSceneY();
 
     }
+
 
 }
