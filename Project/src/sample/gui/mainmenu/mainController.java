@@ -1,5 +1,14 @@
 package sample.gui.mainmenu;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+import java.util.Objects;
+import java.util.ResourceBundle;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,20 +19,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
-
-import javax.swing.*;
-import java.io.File;
-import java.io.IOException;
-import java.net.URL;
-import java.util.Objects;
-import java.util.ResourceBundle;
+import javafx.stage.StageStyle;
 
 public class mainController implements Initializable {
+	private Pane content;
     private Parent root;
     private double x = 0;
     private double y = 0;
@@ -104,18 +109,34 @@ public class mainController implements Initializable {
     }
 
     @FXML
-    void help(ActionEvent e) {
-        envelopeVirusView.setVisible(false);
-        if (!helpStatus) {
-            helpView.setVisible(true);
-            helpStatus = true;
-            envelopeVirusView.setVisible(false);
-            envelopeVirusStatus = false;
-            nonEnvelopeVirusView.setVisible(false);
-            nonEnvelopeVirusStatus = false;
-        } else {
-            helpView.setVisible(false);
-            helpStatus = false;
+    void help(ActionEvent e) throws IOException {
+//        envelopeVirusView.setVisible(false);
+//        if (!helpStatus) {
+//            helpView.setVisible(true);
+//            helpStatus = true;
+//            envelopeVirusView.setVisible(false);
+//            envelopeVirusStatus = false;
+//            nonEnvelopeVirusView.setVisible(false);
+//            nonEnvelopeVirusStatus = false;
+//        } else {
+//            helpView.setVisible(false);
+//            helpStatus = false;
+//        }
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/sample/gui/help/help.fxml"));
+            /*
+             * if "fx:controller" is not set in fxml
+             * fxmlLoader.setController(NewWindowController);
+             */
+            Scene scene = new Scene(fxmlLoader.load());
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.UNDECORATED);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e1) {
+//            Logger logger = Logger.getLogger(getClass().getName());
+//            logger.log(Level.SEVERE, "Failed to create new Window.", e);
         }
     }
 
