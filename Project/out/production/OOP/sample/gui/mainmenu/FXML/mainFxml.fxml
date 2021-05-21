@@ -23,7 +23,7 @@
                     <children>
                         <AnchorPane>
                             <children>
-                                <Button id="envelop virus" layoutX="51.0" layoutY="8.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#envelopeVirus" prefHeight="40.0" prefWidth="160.0" stylesheets="@../css/button.css" text="  Envelope Virus           ➤" textFill="#c4a8a7">
+                                <Button id="envelop virus" layoutX="51.0" layoutY="8.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#envelopeVirus" prefHeight="40.0" prefWidth="160.0" stylesheets="@../css/button.css" text="  Envelope Virus           ➤" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="12.0" />
                                     </font>
@@ -53,7 +53,7 @@
                     <children>
                         <AnchorPane>
                             <children>
-                                <Button layoutX="50.0" layoutY="5.0" mnemonicParsing="false" onAction="#nonEnvelopeVirus" prefHeight="40.0" prefWidth="160.0" stylesheets="@../css/button.css" text="  Non-Envelope Virus  ➤" textFill="#c4a8a7">
+                                <Button layoutX="50.0" layoutY="5.0" mnemonicParsing="false" onAction="#nonEnvelopeVirus" prefHeight="40.0" prefWidth="160.0" stylesheets="@../css/button.css" text="  Non-Envelope Virus  ➤" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="12.0" />
                                     </font>
@@ -100,11 +100,11 @@
                         <String fx:value="scroll-pane" />
                     </styleClass>
                 </TextArea>
-                <VBox fx:id="envelopeVirusView" prefHeight="456.0" prefWidth="574.0" style="-fx-border-color: #590d08; -fx-border-width: 4; -fx-border-radius: 0 40 0 40; -fx-background-radius: 0 40 0 40;" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="30.0">
+                <VBox fx:id="envelopeVirusView" prefHeight="456.0" prefWidth="574.0" style="-fx-border-color: #590d08; -fx-border-width: 4; -fx-border-radius: 0 40 0 40; -fx-background-radius: 0 40 0 40; -fx-background-color: #2A0704C3;" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="30.0">
                     <children>
                         <HBox prefHeight="190.0" prefWidth="590.0" style="-fx-border-width: 0  0 5 0; -fx-border-color: #590d08;">
                             <children>
-                                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-border-radius: 0 0 15 0; -fx-background-radius: 0 0 15 0;" stylesheets="@../css/button.css" text="Coronavirus" textFill="#c4a8a7">
+                                <Button mnemonicParsing="false" onAction="#covidScene" prefHeight="35.0" prefWidth="100.0" style="-fx-border-radius: 0 0 15 0; -fx-background-radius: 0 0 15 0;" stylesheets="@../css/button.css" text="Coronavirus" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="12.0" />
                                     </font>
@@ -112,11 +112,19 @@
                                         <Insets left="-2.0" top="-2.0" />
                                     </HBox.margin>
                                 </Button>
+                        <ImageView fitHeight="150.0" fitWidth="439.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../media/Coronavirus.jpg" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="60.0" top="2.0" />
+                           </HBox.margin>
+                        </ImageView>
                             </children>
                         </HBox>
                         <HBox prefHeight="190.0" prefWidth="390.0" style="-fx-border-color: #590d08; -fx-border-width: 0 0 5 0;">
                             <children>
-                                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-border-radius: 0 0 15 0; -fx-background-radius: 0 0 15 0;" stylesheets="@../css/button.css" text="Ebola" textFill="#c4a8a7">
+                                <Button mnemonicParsing="false" onAction="#ebolaScene" prefHeight="35.0" prefWidth="100.0" style="-fx-border-radius: 0 0 15 0; -fx-background-radius: 0 0 15 0;" stylesheets="@../css/button.css" text="Ebola" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="12.0" />
                                     </font>
@@ -124,11 +132,19 @@
                                         <Insets left="-2.0" top="-2.0" />
                                     </HBox.margin>
                                 </Button>
+                        <ImageView fitHeight="150.0" fitWidth="301.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../media/ebola.jpg" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="60.0" top="2.0" />
+                           </HBox.margin>
+                        </ImageView>
                             </children>
                         </HBox>
                         <HBox prefHeight="190.0" prefWidth="603.0">
                             <children>
-                                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-border-radius: 0 0 15 0; -fx-background-radius: 0 0 15 0;" stylesheets="@../css/button.css" text="HIV" textFill="#c4a8a7">
+                                <Button mnemonicParsing="false" onAction="#hivScene" prefHeight="35.0" prefWidth="100.0" style="-fx-border-radius: 0 0 15 0; -fx-background-radius: 0 0 15 0;" stylesheets="@../css/button.css" text="HIV" textFill="WHITE">
                                     <font>
                                         <Font name="System Bold" size="12.0" />
                                     </font>
@@ -136,6 +152,14 @@
                                         <Insets left="-2.0" top="-2.0" />
                                     </HBox.margin>
                                 </Button>
+                        <ImageView fitHeight="150.0" fitWidth="301.0" onMouseClicked="#hivScene" pickOnBounds="true">
+                           <image>
+                              <Image url="@../media/hiv.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="60.0" top="2.0" />
+                           </HBox.margin>
+                        </ImageView>
                             </children>
                         </HBox>
                     </children>
@@ -144,7 +168,7 @@
                     <children>
                         <HBox prefHeight="190.0" prefWidth="590.0" style="-fx-border-width: 0  0 5 0; -fx-border-color: #590d08;">
                             <children>
-                                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-border-radius: 0 0 15 0; -fx-background-radius: 0 0 15 0;" stylesheets="@../css/button.css" text="Rhinovirus" textFill="#c4a8a7">
+                                <Button mnemonicParsing="false" onAction="#rhinoScene" prefHeight="35.0" prefWidth="100.0" style="-fx-border-radius: 0 0 15 0; -fx-background-radius: 0 0 15 0;" stylesheets="@../css/button.css" text="Rhinovirus" textFill="#c4a8a7">
                                     <font>
                                         <Font name="System Bold" size="12.0" />
                                     </font>
@@ -152,11 +176,19 @@
                                         <Insets left="-2.0" top="-2.0" />
                                     </HBox.margin>
                                 </Button>
+                        <ImageView fitHeight="151.0" fitWidth="301.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../media/rhino.jpg" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="60.0" top="2.0" />
+                           </HBox.margin>
+                        </ImageView>
                             </children>
                         </HBox>
                         <HBox prefHeight="190.0" prefWidth="390.0" style="-fx-border-color: #590d08; -fx-border-width: 0 0 5 0;">
                             <children>
-                                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-border-radius: 0 0 15 0; -fx-background-radius: 0 0 15 0;" stylesheets="@../css/button.css" text="Norovirus" textFill="#c4a8a7">
+                                <Button mnemonicParsing="false" onAction="#noroScene" prefHeight="35.0" prefWidth="100.0" style="-fx-border-radius: 0 0 15 0; -fx-background-radius: 0 0 15 0;" stylesheets="@../css/button.css" text="Norovirus" textFill="#c4a8a7">
                                     <font>
                                         <Font name="System Bold" size="12.0" />
                                     </font>
@@ -164,11 +196,19 @@
                                         <Insets left="-2.0" top="-2.0" />
                                     </HBox.margin>
                                 </Button>
+                        <ImageView fitHeight="150.0" fitWidth="301.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../media/noro.jpg" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="60.0" top="2.0" />
+                           </HBox.margin>
+                        </ImageView>
                             </children>
                         </HBox>
                         <HBox prefHeight="190.0" prefWidth="603.0">
                             <children>
-                                <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="100.0" style="-fx-border-radius: 0 0 15 0; -fx-background-radius: 0 0 15 0;" stylesheets="@../css/button.css" text="Poliovirus" textFill="#c4a8a7">
+                                <Button mnemonicParsing="false" onAction="#polioScene" prefHeight="35.0" prefWidth="100.0" style="-fx-border-radius: 0 0 15 0; -fx-background-radius: 0 0 15 0;" stylesheets="@../css/button.css" text="Poliovirus" textFill="#c4a8a7">
                                     <font>
                                         <Font name="System Bold" size="12.0" />
                                     </font>
@@ -176,6 +216,14 @@
                                         <Insets left="-2.0" top="-2.0" />
                                     </HBox.margin>
                                 </Button>
+                        <ImageView fitHeight="155.0" fitWidth="301.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@../media/polio.jpg" />
+                           </image>
+                           <HBox.margin>
+                              <Insets left="60.0" top="2.0" />
+                           </HBox.margin>
+                        </ImageView>
                             </children>
                         </HBox>
                     </children>
@@ -193,7 +241,7 @@
                                 <Font name="System Bold" size="12.0" />
                             </font>
                             <HBox.margin>
-                                <Insets />
+                                <Insets top="-2.0" />
                             </HBox.margin>
                         </Button>
                         <Button alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="144.0" layoutY="10.0" mnemonicParsing="false" onAction="#exit" prefHeight="25.0" prefWidth="35.0" stylesheets="@../css/exitButton.css" text="✕" textFill="WHITE">
@@ -203,9 +251,9 @@
                         </Button>
                     </children>
                 </HBox>
-                <VBox alignment="BOTTOM_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="442.0" prefWidth="174.0">
+                <VBox alignment="BOTTOM_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="437.0" prefWidth="174.0">
                     <children>
-                        <Button fx:id="helpButton" alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" mnemonicParsing="false" onAction="#help" prefHeight="40.0" prefWidth="154.0" stylesheets="@../css/button.css" text="Help" textAlignment="CENTER" textFill="#c4a8a7">
+                        <Button fx:id="helpButton" alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" mnemonicParsing="false" onAction="#help" prefHeight="40.0" prefWidth="154.0" stylesheets="@../css/button.css" text="Help" textAlignment="CENTER" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
@@ -216,7 +264,7 @@
                                 <Insets />
                             </VBox.margin>
                         </Button>
-                        <Button alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" mnemonicParsing="false" onAction="#exit" prefHeight="40.0" prefWidth="154.0" stylesheets="@../css/button.css" text="Exit" textFill="#c4a8a7">
+                        <Button alignment="CENTER" contentDisplay="CENTER" maxWidth="-Infinity" mnemonicParsing="false" onAction="#exit" prefHeight="40.0" prefWidth="154.0" stylesheets="@../css/button.css" text="Exit" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>

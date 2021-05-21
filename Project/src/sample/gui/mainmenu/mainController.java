@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
@@ -46,7 +47,18 @@ public class mainController implements Initializable {
     private VBox envelopeVirusView;
     @FXML
     private VBox nonEnvelopeVirusView;
-
+    @FXML
+    private ImageView rhinoVirusView;
+    @FXML
+    private ImageView noroVirusView;
+    @FXML
+    private ImageView polioVirusView;
+    @FXML
+    private ImageView coronaVirusView;
+    @FXML
+    private ImageView ebolaVirusView;
+    @FXML
+    private ImageView hivView;
 
 
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -60,13 +72,68 @@ public class mainController implements Initializable {
 
     @FXML
     void ebolaScene(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/sample/gui/ebola/ebolaFxml.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/sample/gui/ebola/FXML/ebolaFxml.fxml")));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        music.stop();
         stage.show();
 
+    }
 
+    @FXML
+    void hivScene(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/sample/gui/hiv/FXML/hivFxml.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        music.stop();
+        stage.show();
+
+    }
+
+    @FXML
+    void rhinoScene(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/sample/gui/rhino/FXML/rhinoFxml.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        music.stop();
+        stage.show();
+
+    }
+
+    @FXML
+    void noroScene(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/sample/gui/noro/FXML/noroFxml.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        music.stop();
+        stage.show();
+
+    }
+
+    @FXML
+    void polioScene(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/sample/gui/polio/FXML/polioFxml.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        music.stop();
+        stage.show();
+
+    }
+
+    @FXML
+    void covidScene(ActionEvent event) throws IOException {
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/sample/gui/covid/FXML/covidFxml.fxml")));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            scene.setRoot(root);
+            stage.setScene(scene);
+        music.stop();
+            stage.show();
     }
 
     @FXML
@@ -101,6 +168,7 @@ public class mainController implements Initializable {
             envelopeVirusStatus = false;
         }
 
+
     }
 
     @FXML
@@ -126,15 +194,16 @@ public class mainController implements Initializable {
 //        UIManager UI = new UIManager();
 //        UI.put("OptionPane.background", new ColorUIResource(123, 8, 8));
 //        UI.put("Panel.background", new ColorUIResource(123, 8, 8));
-        int option = JOptionPane.showConfirmDialog(new JFrame(), "Do you sure to exit?", "Exit",
-                JOptionPane.OK_CANCEL_OPTION);
-        if (option == JOptionPane.YES_OPTION) {
+//        int option = JOptionPane.showConfirmDialog(new JFrame(), "Do you sure to exit?", "Exit",
+//                JOptionPane.OK_CANCEL_OPTION);
+//        if (option == JOptionPane.YES_OPTION) {
             ((Stage) (((Button) e.getSource()).getScene().getWindow())).close();
 
-        }
+//        }
     }
+
     @FXML
-    void minimize(ActionEvent e){
+    void minimize(ActionEvent e) {
         ((Stage) (((Button) e.getSource()).getScene().getWindow())).setIconified(true);
     }
 
