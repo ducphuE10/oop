@@ -1,0 +1,58 @@
+.root{
+    -fx-background-image: url("../media/background.png");
+    -fx-background-size: cover;
+
+}
+.button{
+    -fx-background-color: rgba(42, 7, 4, 0.76);
+    -fx-border-color: rgba(255, 255, 255, 0.2);
+    -fx-border-width: 3 3 3 3;
+    -fx-border-radius:  3 3 0 0;
+    -fx-border-insets: -1;
+    -fx-alignment: center;
+}
+.button :hover {
+    -fx-background-color: white;
+
+}
+
+.text-area {
+    -fx-background-insets: 0;
+    -fx-background-color:  #2a0704;
+    -fx-background-radius:  0 40 0 40;
+
+}
+
+.text-area .content {
+    -fx-background-color:  #2a0704;
+    -fx-background-radius:  0 40 0 40;
+}
+
+.text-area:focused .content {
+    -fx-background-color:  #2a0704;
+    -fx-background-radius:  0 40 0 40;
+}
+
+.scroll-pane {
+
+}
+
+.viewport {
+    -fx-background-insets: 0;
+    -fx-background-color:  #2a0704;
+    -fx-background-radius:  0 40 0 40;
+
+}
+
+.content {
+}
+
+.text {
+}
+
+.text-area:focused {
+    -fx-highlight-fill: #7ecfff;
+    -fx-background-insets: 0;
+    -fx-background-color:  #2a0704;
+    -fx-background-radius: 0 40 0 40;
+}
