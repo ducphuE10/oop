@@ -1,4 +1,5 @@
-package sample.virus;
+package Virus;
 
 public class Virus {
+	
 }
