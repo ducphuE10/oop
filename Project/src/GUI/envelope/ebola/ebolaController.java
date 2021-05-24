@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
@@ -33,7 +34,7 @@ public class ebolaController extends GeneralVirusController implements Initializ
     @FXML
     private Slider progress;
     @FXML
-    private TextArea textExplain;
+    private Label textExplain;
 
 
     @Override

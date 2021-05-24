@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.media.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="576.0" prefWidth="1024.0" style="-fx-background-color: #f1f3f4;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.nonenvelope.noro.noroController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="576.0" prefWidth="1024.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.nonenvelope.noro.noroController">
     <children>
         <AnchorPane fx:id="viewField" layoutX="51.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" onMousePressed="#collapse" prefHeight="546.0" prefWidth="1024.0" style="-fx-border-width: 2; -fx-border-color: #2a0704;" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="28.0">
             <children>
@@ -20,6 +25,7 @@
                               <Image url="@../media/VirusStructure.png" />
                           </image>
                       </ImageView>
+                  <Label fx:id="textExplain" alignment="TOP_LEFT" layoutY="312.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="220.0" prefWidth="534.0" wrapText="true" />
                   <Pane layoutX="47.0" layoutY="60.0" onMousePressed="#introVirus" prefHeight="192.0" prefWidth="184.0" />
                   <Button layoutX="387.0" layoutY="78.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#showSDomain" prefHeight="23.0" prefWidth="58.0" style="-fx-background-color: transparent;" text="S Domain" textFill="TRANSPARENT" wrapText="true">
                      <padding>
@@ -41,11 +47,6 @@
                         <Insets bottom="-20.0" />
                      </padding>
                   </Button>
-                  <TextArea fx:id="textExplain" cacheShape="false" centerShape="false" editable="false" focusTraversable="false" layoutX="12.0" layoutY="334.0" prefHeight="200.0" prefWidth="530.0" style="-fx-border-width: 0;" wrapText="true">
-                     <cursor>
-                        <Cursor fx:constant="TEXT" />
-                     </cursor>
-                  </TextArea>
                   <Button layoutX="377.0" layoutY="120.0" mnemonicParsing="false" onAction="#showRNA" prefHeight="72.0" prefWidth="78.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="RNA" textFill="TRANSPARENT" />
                </children>
             </AnchorPane>
