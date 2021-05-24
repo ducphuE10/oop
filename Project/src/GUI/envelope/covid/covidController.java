@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -34,6 +35,8 @@ public class covidController extends GeneralVirusController implements Initializ
     private Slider volumnBar;
     @FXML
     private Slider progress;
+    @FXML
+    private Label moment;
 
 
     @Override
@@ -56,7 +59,7 @@ public class covidController extends GeneralVirusController implements Initializ
                 if (volumnBar.getValue() == 0){
                     muted.setVisible(true);
                     volumn.setVisible(false);
-                }
+                }else{volumn.setVisible(true);muted.setVisible(false);}
             }
         });
 
@@ -64,6 +67,7 @@ public class covidController extends GeneralVirusController implements Initializ
                                                           @Override
                                                           public void changed(ObservableValue<? extends Duration> observable, Duration oldValue, Duration newValue) {
                                                               progress.setValue(newValue.toSeconds());
+                                                              moment.setText(""+ String.format("%02d", (int) newValue.toSeconds()/60) +":" + String.format("%02d",(int)newValue.toSeconds()%60));
                                                           }
                                                       }
         );

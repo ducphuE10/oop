@@ -56,7 +56,7 @@ public class polioController extends GeneralVirusController implements Initializ
                 if (volumnBar.getValue() == 0){
                     muted.setVisible(true);
                     volumn.setVisible(false);
-                }
+                }else{volumn.setVisible(true);muted.setVisible(false);}
             }
         });
 
@@ -64,6 +64,7 @@ public class polioController extends GeneralVirusController implements Initializ
                                                           @Override
                                                           public void changed(ObservableValue<? extends Duration> observable, Duration oldValue, Duration newValue) {
                                                               progress.setValue(newValue.toSeconds());
+                                                              moment.setText(""+ String.format("%02d", (int) newValue.toSeconds()/60) +":" + String.format("%02d",(int)newValue.toSeconds()%60));
                                                           }
                                                       }
         );

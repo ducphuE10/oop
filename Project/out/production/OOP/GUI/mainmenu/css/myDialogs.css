@@ -12,7 +12,7 @@
     
 }
 .myDialog:header *.header-panel{
-    -fx-background-color: #8b0000;
+    -fx-background-color: rgba(139, 0, 0, 0.74);
 }
 .myDialog:header *.header-panel *.label{
     -fx-font-size: 18px;

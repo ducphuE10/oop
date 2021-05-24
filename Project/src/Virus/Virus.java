@@ -1,4 +1,4 @@
-package sample.virus;
+package Virus;
 
-public class Virus {
+public abstract class Virus implements attack {
 }

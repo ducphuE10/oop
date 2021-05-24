@@ -48,10 +48,10 @@ public class GeneralVirusController {
     @FXML
     public ImageView image, volumn, muted;
     @FXML
-    public AnchorPane viewField, playingBar,animationView,menuBar;
+    public AnchorPane viewField, playingBar,animationView,menuBar,structure;
 
     @FXML
-    void collapse(ActionEvent event) {
+    void collapse() {
         TranslateTransition slider = new TranslateTransition();
         slider.setDuration(Duration.millis(400));
         slider.setNode(menuBar);
@@ -148,29 +148,29 @@ public class GeneralVirusController {
     public void virusStructure(ActionEvent e) {
         media.setVisible(false);
         animationView.setVisible(false);
-        image.setVisible(true);
+        structure.setVisible(true);
         playingBar.setVisible(false);
-        collapse(e);
+        collapse();
 
     }
     @FXML
     public void animation(ActionEvent e){
 
         media.setVisible(false);
-        image.setVisible(false);
         playingBar.setVisible(false);
         animationView.setVisible(true);
-        collapse(e);
+        structure.setVisible(false);
+        collapse();
    }
 
     @FXML
     public void video(ActionEvent e) {
 
-        image.setVisible(false);
         animationView.setVisible(false);
         media.setVisible(true);
         playingBar.setVisible(true);
-        collapse(e);
+        structure.setVisible(false);
+        collapse();
 
     }
 

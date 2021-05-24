@@ -13,8 +13,10 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
@@ -29,11 +31,13 @@ public class noroController extends GeneralVirusController implements Initializa
     private MediaPlayer mediaPlayer;
     private String path = "src/GUI/nonenvelope/noro/media/animation.mp4";
     @FXML
-    private ImageView image;
+    private AnchorPane stucture;
     @FXML
     private Slider volumnBar;
     @FXML
     private Slider progress;
+    @FXML
+    private TextArea textExplain;
 
 
     @Override
@@ -53,9 +57,12 @@ public class noroController extends GeneralVirusController implements Initializa
             @Override
             public void invalidated(Observable observable) {
                 mediaPlayer.setVolume(volumnBar.getValue() / 100);
-                if (volumnBar.getValue() == 0){
+                if (volumnBar.getValue() == 0) {
                     muted.setVisible(true);
                     volumn.setVisible(false);
+                } else {
+                    volumn.setVisible(true);
+                    muted.setVisible(false);
                 }
             }
         });
@@ -64,6 +71,7 @@ public class noroController extends GeneralVirusController implements Initializa
                                                           @Override
                                                           public void changed(ObservableValue<? extends Duration> observable, Duration oldValue, Duration newValue) {
                                                               progress.setValue(newValue.toSeconds());
+                                                              moment.setText("" + String.format("%02d", (int) newValue.toSeconds() / 60) + ":" + String.format("%02d", (int) newValue.toSeconds() % 60));
                                                           }
                                                       }
         );
@@ -110,8 +118,9 @@ public class noroController extends GeneralVirusController implements Initializa
         } catch (Exception e1) {
         }
     }
+
     @Override
-    public void animation(ActionEvent e){
+    public void animation(ActionEvent e) {
         super.animation(e);
         try {
             mediaPlayer.stop();
@@ -168,6 +177,61 @@ public class noroController extends GeneralVirusController implements Initializa
             volumn.setVisible(true);
         }
 
+    }
+
+    @FXML
+    void showConstant(ActionEvent event) {
+        textExplain.setText("Constant Domain:\n" +
+                "the constant domain is blue. Note the large gap between the shell and P " +
+                "domain and that the Fab binds to the very top of the P domain." +
+                " Panel C is a stereo diagram of the pseudo atomic model of the 2D3/MNV complex. " +
+                "The open and closed conformations of the P domain is shown in red and blue, respectively." +
+                " The heavy chain variable and the light variable domains are shown in yellow and brown, respectively." +
+                "Note that the CDR3 loop of the heavy chain fits into the cleft between the A’-B’ and E’-F’ loops in " +
+                "the open conformation but completely overlaps the E’-F’ loop in the closed conformation," +
+                " making it unlikely that 2D3 can bind to the closed conformation.\n");
+
+    }
+
+    @FXML
+    void showPDomain(ActionEvent event) {
+        textExplain.setText("P Domain:\n" +
+                "The P domains dimerize to form protrusions on the capsid surface." +
+                " The P domain is subdivided into P1 and P2 subdomains, with the latter containing the binding" +
+                " sites for cellular receptors and neutralizing antibodies. There is increasing evidence " +
+                "that these viruses are extremely dynamic and this flexibility is critical for viral replication. " +
+                "There are at least two modes of flexibility; the entire P domain relative to the shell and within the P domain itself\n");
+
+    }
+
+    @FXML
+    void showRNA(ActionEvent event) {
+        textExplain.setText("RNA:\n" +
+                " RNA as its genetic material of Virus,\n");
+
+    }
+
+    @FXML
+    void showSDomain(ActionEvent event) {
+        textExplain.setText("S domain:\n" +
+                " The S domain forms a shell around the viral RNA genome.\n");
+
+    }
+
+    @FXML
+    void showVariable(ActionEvent event) {
+        textExplain.setText("Varibale Domainn:\n" +
+                "the Fab variable domain is cyan\n");
+
+    }
+
+    @FXML
+    void introVirus() {
+        textExplain.setText("Viruses in Norovirus are non-enveloped, with icosahedral geometries." +
+                " Capsid diameters vary widely, from 23 to 40 nm in diameter." +
+                " The larger capsids (38–40 nm) exhibit T=3 symmetry and are composed of 180 VP1 proteins." +
+                " Small capsids (23 nm) show T=1 symmetry, and are composed of 60 VP1 proteins." +
+                " The virus particles demonstrate an amorphous surface structure when visualized using electron microscopy.");
     }
 
 
