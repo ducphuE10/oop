@@ -12,17 +12,68 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="576.0" prefWidth="1024.0" stylesheets="@../../../source/CSS/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.envelope.covid.covidController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="576.0" prefWidth="1024.0" style="-fx-background-color: #f1f3f4;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.envelope.covid.CovidController">
    <children>
-      <AnchorPane fx:id="viewField" layoutX="51.0" layoutY="39.0" maxHeight="-Infinity" maxWidth="-Infinity" onMousePressed="#collapse" prefHeight="470.0" prefWidth="950.0" style="-fx-border-width: 2; -fx-border-color: #2a0704;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="viewField" maxHeight="-Infinity" maxWidth="-Infinity" onMousePressed="#collapse" prefHeight="470.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <MediaView fx:id="media" fitHeight="576.0" fitWidth="1024.0" onMouseEntered="#showPlayingBar" onMouseExited="#hidePlayingBar" preserveRatio="false" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <ImageView fx:id="image" fitHeight="576.0" fitWidth="1022.0" layoutX="3.0" layoutY="2.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <image>
-                  <Image url="@../media/VirusStructure.png" />
-               </image>
-            </ImageView>
-            <AnchorPane fx:id="animationView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <AnchorPane fx:id="structure" layoutX="4.0" layoutY="26.0" prefHeight="550.0" prefWidth="1020.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="24.0">
+               <children>
+                  <ImageView fitHeight="431.0" fitWidth="617.0" layoutX="73.0" layoutY="52.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/gr1.jpg" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="591.0" layoutY="91.0" mnemonicParsing="false" onAction="#setEP" prefHeight="32.0" prefWidth="118.0" stylesheets="@../css/strucButton.css" text="Evenlope protein" />
+                  <Button layoutX="591.0" layoutY="195.0" mnemonicParsing="false" onAction="#setMP" prefHeight="32.0" prefWidth="118.0" stylesheets="@../css/strucButton.css" text="M protein" />
+                  <Button layoutX="591.0" layoutY="251.0" mnemonicParsing="false" onAction="#setSG" prefHeight="35.0" prefWidth="118.0" stylesheets="@../css/strucButton.css" text="Spike Glycoprotein" />
+                  <Button layoutX="591.0" layoutY="301.0" mnemonicParsing="false" onAction="#setNP" prefHeight="32.0" prefWidth="118.0" stylesheets="@../css/strucButton.css" text="RNA &amp; N protein" />
+                  <Button layoutX="591.0" layoutY="402.0" mnemonicParsing="false" onAction="#setLM" prefHeight="32.0" prefWidth="118.0" stylesheets="@../css/strucButton.css" text="Lipid membrane" />
+                  <Label fx:id="setData" alignment="TOP_LEFT" contentDisplay="TOP" layoutX="724.0" layoutY="12.0" prefHeight="532.0" prefWidth="285.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="353.0" layoutY="12.0" prefHeight="40.0" prefWidth="197.0" text="Virus Corona">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="animationView" layoutX="2.0" layoutY="26.0" prefHeight="550.0" prefWidth="1024.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="26.0">
+               <children>
+                  <ImageView fx:id="hostCell1" fitHeight="414.0" fitWidth="1024.0" layoutY="136.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/Cell%201.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="hostCell2" fitHeight="414.0" fitWidth="1024.0" layoutY="136.0" opacity="0.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/Cell%202.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="hostCell3" fitHeight="414.0" fitWidth="1024.0" layoutY="142.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/Cell3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="virus1" fitHeight="166.0" fitWidth="159.0" layoutX="672.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/Virus%20Phase%201.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="virus2" fitHeight="166.0" fitWidth="159.0" layoutX="371.0" layoutY="391.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/Virus%20Phase%202.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="replay" alignment="CENTER" layoutX="85.0" layoutY="32.0" mnemonicParsing="false" onAction="#runAnimation" prefHeight="23.0" prefWidth="95.0" style="-fx-background-color: #cfcccc;" text="PLAY">
+                     <font>
+                        <Font name="System Italic" size="19.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
+            <MediaView fx:id="media" fitHeight="550.0" fitWidth="1024.0" onMouseEntered="#showPlayingBar" onMouseExited="#hidePlayingBar" preserveRatio="false" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0" />
          </children>
       </AnchorPane>
       <AnchorPane fx:id="playingBar" layoutX="55.0" layoutY="509.0" prefHeight="30.0" prefWidth="950.0" style="-fx-background-color: #FFFFFF2C;" visible="false" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="28.0">
@@ -81,7 +132,7 @@
       </AnchorPane>
       <AnchorPane fx:id="menuBar" styleClass="root" stylesheets="@../../../source/CSS/style.css" translateX="-200.0" AnchorPane.leftAnchor="0.0">
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="576.0" prefWidth="197.0" style="-fx-background-color: #FFFFFF2C;">
+            <HBox alignment="CENTER_LEFT" prefHeight="576.0" prefWidth="197.0">
                <children>
                   <VBox alignment="CENTER_LEFT" prefHeight="576.0" prefWidth="194.0" stylesheets="@../../../source/CSS/stylebg.css">
                      <children>
@@ -200,7 +251,8 @@
             </HBox>
          </children>
       </AnchorPane>
-      <Button fx:id="expandButton" layoutY="247.0" mnemonicParsing="false" onAction="#expand" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="82.0" prefWidth="17.0" style="-fx-background-color: #FFFFFF32; -fx-background-radius: 0 5 5 0; -fx-border-width: 0;" text="〉" textFill="WHITE" wrapText="true" />
+      <Button fx:id="expandButton" layoutY="247.0" mnemonicParsing="false" onAction="#expand" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="82.0" prefWidth="17.0" style="-fx-background-color: #b22222; -fx-background-radius: 0 5 5 0; -fx-border-width: 0;" text="〉" textFill="WHITE" wrapText="true" />
+      <AnchorPane maxHeight="-Infinity" prefHeight="27.0" prefWidth="200.0" style="-fx-effect: dropshadow(three-pass-box, black, 0, 0, 0, 1);" styleClass="root" stylesheets="@../../../source/CSS/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Button layoutX="996.0" layoutY="1.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#exit" prefHeight="27.0" prefWidth="35.0" stylesheets="@../../../source/CSS/exitButton.css" text="✕" textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <Button layoutX="953.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#minimize" prefHeight="27.0" prefWidth="35.0" stylesheets="@../../../source/CSS/miniButton.css" text="―" textFill="WHITE" AnchorPane.rightAnchor="35.0" />
    </children>

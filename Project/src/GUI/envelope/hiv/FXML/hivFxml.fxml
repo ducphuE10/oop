@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -12,7 +19,7 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="576.0" prefWidth="1024.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.envelope.hiv.hivController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="576.0" prefWidth="1024.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.envelope.hiv.HivController">
     <children>
         <AnchorPane fx:id="viewField" layoutX="-6.0" layoutY="26.0" maxHeight="-Infinity" maxWidth="-Infinity" onMousePressed="#collapse" prefHeight="550.0" prefWidth="1030.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
             <children>
@@ -37,6 +44,11 @@
                   <Button layoutX="515.0" layoutY="365.0" mnemonicParsing="false" onAction="#showReverse" prefHeight="34.0" prefWidth="102.0" style="-fx-background-color: transparent;" text="Reverse Transcriptase" textFill="TRANSPARENT" />
                   <Button layoutX="144.0" layoutY="399.0" mnemonicParsing="false" onAction="#showHumanClass2" prefHeight="30.0" prefWidth="134.0" style="-fx-background-color: transparent;" text="Human Leukocyte Class 2" textFill="TRANSPARENT" />
                   <Button layoutX="211.0" layoutY="447.0" mnemonicParsing="false" onAction="#showNucleocapsid" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: transparent;" text="Nucleocapsid protein p24" textFill="TRANSPARENT" />
+                  <Label layoutX="340.0" layoutY="14.0" text="Virus HIV">
+                     <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
                 <AnchorPane fx:id="animationView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />

@@ -1,9 +1,9 @@
 package Virus;
 
-public class virus implements attack {
+public class Virus implements Attack {
     public double size;
-    public acidNucleic typeOfAcidNucleic;
-    public capsid typeOfNucleocapsid;
+    public AcidNucleic typeOfAcidNucleic;
+    public Capsid typeOfNucleocapsid;
 
     public double getSize() {
         return size;
@@ -18,25 +18,25 @@ public class virus implements attack {
 
     }
 
-    public virus(double size, acidNucleic typeOfAcidNucleic, capsid typeOfNucleocapsid) {
+    public Virus(double size, AcidNucleic typeOfAcidNucleic, Capsid typeOfNucleocapsid) {
         this.size = size;
         this.typeOfAcidNucleic = typeOfAcidNucleic;
         this.typeOfNucleocapsid = typeOfNucleocapsid;
     }
 
-    public acidNucleic getTypeOfAcidNucleic() {
+    public AcidNucleic getTypeOfAcidNucleic() {
         return typeOfAcidNucleic;
     }
 
-    public void setTypeOfAcidNucleic(acidNucleic typeOfAcidNucleic) {
+    public void setTypeOfAcidNucleic(AcidNucleic typeOfAcidNucleic) {
         this.typeOfAcidNucleic = typeOfAcidNucleic;
     }
 
-    public capsid getTypeOfNucleocapsid() {
+    public Capsid getTypeOfNucleocapsid() {
         return typeOfNucleocapsid;
     }
 
-    public void setTypeOfNucleocapsid(capsid typeOfNucleocapsid) {
+    public void setTypeOfNucleocapsid(Capsid typeOfNucleocapsid) {
         this.typeOfNucleocapsid = typeOfNucleocapsid;
     }
 }

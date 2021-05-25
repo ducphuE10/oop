@@ -1,34 +1,30 @@
 package Main;
 
-import Virus.acidNucleic;
-import Virus.capsid;
-import Virus.envelope.coronaVirus;
-import Virus.envelope.ebolaVirus;
-import Virus.envelope.envelope;
-import Virus.envelope.hiv;
-import Virus.nonenvelope.noroVirus;
-import Virus.nonenvelope.polioVirus;
-import Virus.nonenvelope.rhinoVirus;
+import java.util.Objects;
+
+import Virus.AcidNucleic;
+import Virus.Capsid;
+import Virus.envelope.CoronaVirus;
+import Virus.envelope.EbolaVirus;
+import Virus.envelope.Envelope;
+import Virus.envelope.Hiv;
+import Virus.nonenvelope.NoroVirus;
+import Virus.nonenvelope.PolioVirus;
+import Virus.nonenvelope.RhinoVirus;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import java.io.File;
-import java.net.URL;
-import java.util.Objects;
-
 public class Main extends Application {
-    public static noroVirus noro;
-    public static hiv hivVirus;
-    public static ebolaVirus ebola;
-    public static polioVirus polio;
-    public static rhinoVirus rhino;
-    public static coronaVirus corona;
+    public static NoroVirus noro;
+    public static Hiv hivVirus;
+    public static EbolaVirus ebola;
+    public static PolioVirus polio;
+    public static RhinoVirus rhino;
+    public static CoronaVirus corona;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -46,17 +42,17 @@ public class Main extends Application {
         }
     }
     public static void setup(){
-        noroVirus noro1 = new noroVirus(-1,
-                new acidNucleic("ARN"),
-                new capsid("None"),
+        NoroVirus noro1 = new NoroVirus(-1,
+                new AcidNucleic("ARN"),
+                new Capsid("None"),
                 "Constant Domain:\n"  +
                         "the constant domain is blue. Note the large gap between the shell and" +
                         "domain and that the Fab binds to the very top of the P domain." +
                         "Panel C is a stereo diagram of the pseudo atomic model of the 2D3/MNV complex." +
                         "The open and closed conformations of the P domain is shown in red and blue, respectively." +
                         "The heavy chain variable and the light variable domains are shown in yellow and brown, respectively." +
-                        "Note that the CDR3 loop of the heavy chain fits into the cleft between the A’-B’ and E’-F’ loops in" +
-                        "the open conformation but completely overlaps the E’-F’ loop in the closed conformation," +
+                        "Note that the CDR3 loop of the heavy chain fits into the cleft between the Aâ€™-Bâ€™ and Eâ€™-Fâ€™ loops in" +
+                        "the open conformation but completely overlaps the Eâ€™-Fâ€™ loop in the closed conformation," +
                         " making it unlikely that 2D3 can bind to the closed conformation.",
                 "Varibale Domainn:\n" +
                         "the Fab variable domain is cyan",
@@ -72,14 +68,14 @@ public class Main extends Application {
                         "RNA as its genetic material of Virus",
                 "Viruses in Norovirus are non-enveloped, with icosahedral geometries." +
                         "Capsid diameters vary widely, from 23 to 40 nm in diameter." +
-                        "The larger capsids (38–40 nm) exhibit T=3 symmetry and are composed of 180 VP1 proteins." +
+                        "The larger capsids (38â€“40 nm) exhibit T=3 symmetry and are composed of 180 VP1 proteins." +
                         "Small capsids (23 nm) show T=1 symmetry, and are composed of 60 VP1 proteins." +
                         "The virus particles demonstrate an amorphous surface structure when visualized using electron microscopy.");
 
 
-        hiv hivVirus1 = new hiv(-1,new acidNucleic("ARN"),
-                new capsid("None"),
-                new envelope("Lipid bilayer:\n" +
+        Hiv hivVirus1 = new Hiv(-1,new AcidNucleic("ARN"),
+                new Capsid("None"),
+                new Envelope("Lipid bilayer:\n" +
                         "The envelope glycoproteins (Envs) of HIV-1 are embedded in the cholesterol-rich lipid membrane of the virus. " +
                         "Chemical depletion of cholesterol from HIV-1 particles inactivates their infectivity." +
                         " We observed that diverse HIV-1 strains exhibit a range of sensitivities to such treatment. " +
@@ -129,9 +125,9 @@ public class Main extends Application {
                         "Common alleles with frequencies greater than 10%\n",
                 "" +
                         "Integrase:\n" +
-                        "Retroviral integrase (IN) is an enzyme produced by a retrovirus (such as HIV) that integrates—" +
-                        "forms covalent links between—its genetic information into that of the host cell it infects." +
-                        " Retroviral INs are not to be confused with phage integrases (recombinases), such as λ phage" +
+                        "Retroviral integrase (IN) is an enzyme produced by a retrovirus (such as HIV) that integratesâ€”" +
+                        "forms covalent links betweenâ€”its genetic information into that of the host cell it infects." +
+                        " Retroviral INs are not to be confused with phage integrases (recombinases), such as Î» phage" +
                         " integrase, as discussed in site-specific recombination.HIV integrase is a 32 kDa protein produced " +
                         "from the C-terminal portion of the Pol gene product, and is an attractive target for new anti-HIV drugs.\n",
                 "Nucleocapsid p24:\n" +
@@ -150,7 +146,7 @@ public class Main extends Application {
                         "to aspartic proteases. As HIV-1 PR can only function as a dimer, the mature protease" +
                         " contains two Asp25 amino acids, one from each monomer, that act in conjunction with" +
                         " each other as the catalytic residues. Additionally, HIV protease has two molecular \"flaps\" " +
-                        "which move a distance of up to 7 Å when the enzyme becomes associated with a substrate. " +
+                        "which move a distance of up to 7 Ã… when the enzyme becomes associated with a substrate. " +
                         "This can be visualized with animations of the flaps opening and closing.\n",
                 "RNA:\n" +
                         "Upon entry into the target cell, the viral RNA genome is converted (reversed) to double-stranded " +
@@ -187,9 +183,9 @@ public class Main extends Application {
                 " Protein p7,p9:\n" +
                         "Gag protein, p7 or p9, is termed the nucleocapsid protein, and is tightly associated with the RNA genome: it has been found to promote both RNA dimerization and encapsidation. The most C-terminal of the Gag proteins is p6; although its function is not known, mutants lacking this protein exhibit a defect in particle budding.\n");
 
-        ebolaVirus ebola1 = new ebolaVirus(-1,new acidNucleic("ARN"),
-                new capsid("NONE"),
-                new envelope("Viral envelope:\n" +
+        EbolaVirus ebola1 = new EbolaVirus(-1,new AcidNucleic("ARN"),
+                new Capsid("NONE"),
+                new Envelope("Viral envelope:\n" +
                         "A viral envelope is the outermost layer of many types of viruses. It protects the genetic material" +
                         " in their life-cycle when traveling between host cells.\n"),
                 "Glycoprotein:\n" +
@@ -223,11 +219,79 @@ public class Main extends Application {
                         "activator (VP30), VP24, and RNA-dependent RNA polymerase.\n",
                 "VP40,VP24:\n" +
                         "the VP24 is a structural protein, that has the ability to internalize the cell nucleus, " +
-                        "and known as a minor matrix protein and membrane‐associated protein. Then, the latest protein " +
-                        "“VP40” is known as a viral matrix protein, and it is the most abundant protein in Ebola's viral structure.\n");
+                        "and known as a minor matrix protein and membraneâ€�associated protein. Then, the latest protein " +
+                        "â€œVP40â€� is known as a viral matrix protein, and it is the most abundant protein in Ebola's viral structure.\n");
+        
+        CoronaVirus corona1 = new CoronaVirus(-1,
+        		new AcidNucleic("none"),
+        		new Capsid("Inside the envelope, there is the nucleocapsid, which is formed from multiple copies of the "+
+        				"nucleocapsid (N) protein, which are bound to the positive-sense single-stranded RNA genome in a continuous"+
+        				" beads-on-a-string type conformation. N protein is a phosphoprotein of 43 to 50 kDa in size,"+
+        				" and is divided into three conserved domains. The majority of the protein is made up of domains 1 and 2, which are "+
+        				"typically rich in arginines and lysines. Domain 3 has a short carboxy terminal end and has a net"+
+        				" negative charge due to excess of acidic over basic amino acid residues"),
+        		
+        		new Envelope("The viral envelope is made up of a lipid bilayer in which the membrane (M),"+
+        		" envelope (E) and spike (S) structural proteins are anchored. The molar ratio of E:S:M in the lipid"+
+        		" bilayer is approximately 1:20:300. The E and M protein are the structural proteins that combined with"+
+        		" the lipid bilayer to shape the viral envelope and maintain its size. S proteins are needed for interaction"+
+        		" with the host cells. But human coronavirus NL63 is peculiar in that its M protein has the binding site for the"+
+        		" host cell, and not its S protein. The diameter of the envelope is 85 nm. The envelope of the virus in"+
+        		" electron micrographs appears as a distinct pair of electron-dense shells (shells that are relatively opaque"+
+        		" to the electron beam used to scan the virus particle)"),
+        		
+        		"The E proteins are minor structural proteins and highly variable in different species."+
+        		" There are only about 20 copies of the E protein molecule in a coronavirus particle."+
+        		" They are 8.4 to 12 kDa in size and are composed of 76 to 109 amino acids."+
+        		" They are integral proteins (i.e. embedded in the lipid layer) and have two domains namely a transmembrane"+
+        		" domain and an extramembrane C-terminal domain. They are almost fully alpha-helical, with a single alpha-helical"+
+        		" transmembrane domain, and form pentameric (five-molecular) ion channels in the lipid bilayer."+
+        		" They are responsible for virion assembly, intracellular trafficking and morphogenesis (budding).",
+        		
+        		"The M protein is the main structural protein of the envelope that provides the overall shape and is a type III"+
+        		" membrane protein. It consists of 218 to 263 amino acid residues and forms a layer 7.8 nm thick. It has"+
+        		" three domains, a short N-terminal ectodomain, a triple-spanning transmembrane domain, and a C-terminal"+
+        		" endodomain. The C-terminal domain forms a matrix-like lattice that adds to the extra-thickness of the envelope."+
+        		" Different species can have either N- or O-linked glycans in their protein amino-terminal domain."+
+        		" The M protein is crucial during the assembly, budding, envelope formation, and pathogenesis stages of the virus"+
+        		" lifecycle",
+        		
+        		"The spikes are the most distinguishing feature of coronaviruses and are responsible for the corona- or halo-like"+
+        		" surface. On average a coronavirus particle has 74 surface spikes. Each spike is about 20 nm long and is "+
+        		"composed of a trimer of the S protein. The S protein is in turn composed of an S1 and S2 subunit."+
+        		" The homotrimeric S protein is a class I fusion protein which mediates the receptor binding and membrane"+
+        		" fusion between the virus and host cell. The S1 subunit forms the head of the spike and has the receptor-binding"+
+        		" domain (RBD). The S2 subunit forms the stem which anchors the spike in the viral envelope and on protease"+
+        		" activation enables fusion. The two subunits remain noncovalently linked as they are exposed on the viral"+
+        		" surface until they attach to the host cell membrane."
+        		);
+   
+        
+        
+        RhinoVirus rhino1 = new RhinoVirus(-1,
+        		new AcidNucleic("None"),
+        		new Capsid("An icosahedral virion structure of HRV with a pentamer structure shown highlighting the external capsid proteins (VP1, VP2, and VP3) organization. VP1 is responsible for receptor engagement and VP4 is located beneath each monomeric unit and is responsible for genomic association with VPg.There are 60 copies of each of these proteins assembled as an icosahedron. Antibodies are a major defense against infection with the epitopes lying on the exterior regions of VP1-VP3."),
+        		
+        		"The 7.21 kb +ssRNA genome of HRV-16 is comprised of a single open-reading frame encoding 11 gene products, which upon translation into three distinct polyproteins are cleaved by HRV-encoded proteases (2A and 3C). The 5′-end of the genome is capped with a short viral priming protein (VPg) for incorporation during virion assembly and a the 3′-end is polyadenylated. Capsid proteins VP1 and VP4 (∗) are generally used for phylogenetic analysis. RdRP, RNA-dependent RNA polymerase; UTR, untranslated region."
+        		);
+        
+        
+        
+        PolioVirus polio1 = new PolioVirus(-1,
+        		new AcidNucleic("None"),
+        		new Capsid("The poliovirus capsid contains 60 copies each of the four viral polypeptides VP1, VP2, VP3, and VP4. The arrangement of proteins in the capsid creates icosahedral symmetry. The virion surface is covered with star-shaped mesas at its fivefold axes surrounded by deep canyons and three-bladed propellers.\r\n"
+		+ "These are situated at threefold axes separated by saddle depressions straddling twofold axes. Capsid proteins VP1, VP2, and VP3 all have an eight-stranded β-barrel fold, but have different shaped loops on their N- and C-terminal extensions."),
+        		"The genome is a single-stranded positive-sense RNA (+ssRNA) genome that is about 7500 nucleotides long. The viral particle is about 30 nm in diameter with icosahedral symmetry. Because of its short genome and its simple composition—only RNA and a nonenveloped icosahedral protein coat that encapsulates it, poliovirus is widely regarded as the simplest significant virus.",
+        		"VPg (viral protein genome-linked) is a protein that is covalently attached to the 5′ end of positive strand viral RNA and acts as a primer during RNA synthesis in virus polio. The primer activity of VPg occurs when the protein becomes uridylated, providing a free hydroxyl that can be extended by the virally encoded RNA-dependent RNA polymerase. VPg also has a role in translation initiation by acting like a 5' mRNA cap. VPg was first described in initial investigations of poliovirus RNA as a protein covalently attached to the 5' end of the genome"
+);
+        
+        
         ebola = ebola1;
         hivVirus = hivVirus1;
         noro = noro1;
+        corona = corona1;
+        polio = polio1;
+        rhino = rhino1;
 
     }
 
