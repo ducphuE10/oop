@@ -1,6 +1,10 @@
 package GUI.mainmenu;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,11 +20,13 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Duration;
 
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Time;
 import java.util.Objects;
 import java.util.Optional;
 import java.util.ResourceBundle;
@@ -35,6 +41,8 @@ public class MainController implements Initializable {
     private File file;
     private boolean envelopeVirusStatus = false;
     private boolean nonEnvelopeVirusStatus = false;
+    private Timeline tmfadedMusic;
+    private Timeline tmStopMusic;
     @FXML
     private MediaView mediaView;
     @FXML
@@ -65,6 +73,13 @@ public class MainController implements Initializable {
         music = new MediaPlayer(media);
         music.setCycleCount(1000);
         music.play();
+        this.tmStopMusic = new Timeline(new KeyFrame(Duration.millis(1500), new KeyValue(music.volumeProperty(), 0.0)));
+        this.tmfadedMusic = new Timeline(new KeyFrame(Duration.millis(2000), new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                music.stop();
+            }
+        }));
     }
 
 
@@ -74,7 +89,8 @@ public class MainController implements Initializable {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        music.stop();
+        tmfadedMusic.play();
+        tmStopMusic.play();
         stage.show();
 
     }
@@ -85,7 +101,8 @@ public class MainController implements Initializable {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        music.stop();
+        tmfadedMusic.play();
+        tmStopMusic.play();
         stage.show();
 
     }
@@ -96,7 +113,8 @@ public class MainController implements Initializable {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        music.stop();
+        tmfadedMusic.play();
+        tmStopMusic.play();
         stage.show();
 
     }
@@ -107,7 +125,8 @@ public class MainController implements Initializable {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        music.stop();
+        tmfadedMusic.play();
+        tmStopMusic.play();
         stage.show();
 
     }
@@ -118,20 +137,22 @@ public class MainController implements Initializable {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
-        music.stop();
+        tmfadedMusic.play();
+        tmStopMusic.play();
         stage.show();
 
     }
 
     @FXML
     void covidScene(ActionEvent event) throws IOException {
-            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/GUI/envelope/covid/FXML/covidFxml.fxml")));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            scene.setRoot(root);
-            stage.setScene(scene);
-            music.stop();
-            stage.show();
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/GUI/envelope/covid/FXML/covidFxml.fxml")));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.setRoot(root);
+        stage.setScene(scene);
+        tmfadedMusic.play();
+        tmStopMusic.play();
+        stage.show();
     }
 
     @FXML
@@ -198,7 +219,7 @@ public class MainController implements Initializable {
         dialogPane.getStyleClass().add("myDialog");
 
 
-        alert.getButtonTypes().setAll(buttonTypeYes,buttonTypeNo);
+        alert.getButtonTypes().setAll(buttonTypeYes, buttonTypeNo);
         Optional<ButtonType> result = alert.showAndWait();
 
         if (result.get() == buttonTypeYes) {
