@@ -158,10 +158,13 @@ public class CovidController extends GeneralVirusController implements Initializ
         PauseTransition pause = new PauseTransition();
         pause.setDuration(Duration.millis(4000));
         pause.setOnFinished(event -> {
+            tmVirus10.setOnFinished(event1 -> {
+                replay.setVisible(true);
+            });
 
             tmVirus10.play();
             tmVirus21.play();
-            replay.setVisible(true);
+
 
         });
 
