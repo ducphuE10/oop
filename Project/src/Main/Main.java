@@ -1,9 +1,12 @@
 package Main;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import Virus.AcidNucleic;
 import Virus.Capsid;
+import Virus.Virus;
 import Virus.envelope.CoronaVirus;
 import Virus.envelope.EbolaVirus;
 import Virus.envelope.Envelope;
@@ -43,7 +46,7 @@ public class Main extends Application {
     }
     public static void setup(){
         NoroVirus noro1 = new NoroVirus(-1,
-                new AcidNucleic("ARN"),
+                new AcidNucleic("RNA"),
                 new Capsid("None"),
                 "Constant Domain:\n"  +
                         "the constant domain is blue. Note the large gap between the shell and" +
@@ -73,7 +76,7 @@ public class Main extends Application {
                         "The virus particles demonstrate an amorphous surface structure when visualized using electron microscopy.");
 
 
-        Hiv hivVirus1 = new Hiv(-1,new AcidNucleic("ARN"),
+        Hiv hivVirus1 = new Hiv(-1,new AcidNucleic("RNA"),
                 new Capsid("None"),
                 new Envelope("Lipid bilayer:\n" +
                         "The envelope glycoproteins (Envs) of HIV-1 are embedded in the cholesterol-rich lipid membrane of the virus. " +
@@ -183,7 +186,7 @@ public class Main extends Application {
                 " Protein p7,p9:\n" +
                         "Gag protein, p7 or p9, is termed the nucleocapsid protein, and is tightly associated with the RNA genome: it has been found to promote both RNA dimerization and encapsidation. The most C-terminal of the Gag proteins is p6; although its function is not known, mutants lacking this protein exhibit a defect in particle budding.\n");
 
-        EbolaVirus ebola1 = new EbolaVirus(-1,new AcidNucleic("ARN"),
+        EbolaVirus ebola1 = new EbolaVirus(-1,new AcidNucleic("RNA"),
                 new Capsid("NONE"),
                 new Envelope("Viral envelope:\n" +
                         "A viral envelope is the outermost layer of many types of viruses. It protects the genetic material" +
@@ -223,7 +226,7 @@ public class Main extends Application {
                         "â€œVP40â€� is known as a viral matrix protein, and it is the most abundant protein in Ebola's viral structure.\n");
         
         CoronaVirus corona1 = new CoronaVirus(-1,
-        		new AcidNucleic("none"),
+        		new AcidNucleic("RNA"),
         		new Capsid("Inside the envelope, there is the nucleocapsid, which is formed from multiple copies of the "+
         				"nucleocapsid (N) protein, which are bound to the positive-sense single-stranded RNA genome in a continuous"+
         				" beads-on-a-string type conformation. N protein is a phosphoprotein of 43 to 50 kDa in size,"+
@@ -269,7 +272,7 @@ public class Main extends Application {
         
         
         RhinoVirus rhino1 = new RhinoVirus(-1,
-        		new AcidNucleic("None"),
+        		new AcidNucleic("RNA"),
         		new Capsid("An icosahedral virion structure of HRV with a pentamer structure shown highlighting the external capsid proteins (VP1, VP2, and VP3) organization. VP1 is responsible for receptor engagement and VP4 is located beneath each monomeric unit and is responsible for genomic association with VPg.There are 60 copies of each of these proteins assembled as an icosahedron. Antibodies are a major defense against infection with the epitopes lying on the exterior regions of VP1-VP3."),
         		
         		"The 7.21 kb +ssRNA genome of HRV-16 is comprised of a single open-reading frame encoding 11 gene products, which upon translation into three distinct polyproteins are cleaved by HRV-encoded proteases (2A and 3C). The 5′-end of the genome is capped with a short viral priming protein (VPg) for incorporation during virion assembly and a the 3′-end is polyadenylated. Capsid proteins VP1 and VP4 (∗) are generally used for phylogenetic analysis. RdRP, RNA-dependent RNA polymerase; UTR, untranslated region."
@@ -278,7 +281,7 @@ public class Main extends Application {
         
         
         PolioVirus polio1 = new PolioVirus(-1,
-        		new AcidNucleic("None"),
+        		new AcidNucleic("RNA"),
         		new Capsid("The poliovirus capsid contains 60 copies each of the four viral polypeptides VP1, VP2, VP3, and VP4. The arrangement of proteins in the capsid creates icosahedral symmetry. The virion surface is covered with star-shaped mesas at its fivefold axes surrounded by deep canyons and three-bladed propellers.\r\n"
 		+ "These are situated at threefold axes separated by saddle depressions straddling twofold axes. Capsid proteins VP1, VP2, and VP3 all have an eight-stranded β-barrel fold, but have different shaped loops on their N- and C-terminal extensions."),
         		"The genome is a single-stranded positive-sense RNA (+ssRNA) genome that is about 7500 nucleotides long. The viral particle is about 30 nm in diameter with icosahedral symmetry. Because of its short genome and its simple composition—only RNA and a nonenveloped icosahedral protein coat that encapsulates it, poliovirus is widely regarded as the simplest significant virus.",
@@ -297,7 +300,17 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+		List<Virus> listOfVirus = new ArrayList<Virus>();
         setup();
+        listOfVirus.add(ebola);
+        listOfVirus.add(hivVirus);
+        listOfVirus.add(noro);
+        listOfVirus.add(corona);
+        listOfVirus.add(rhino);
+        listOfVirus.add(polio);
+        for (Virus item : listOfVirus){
+        	System.out.println(item.getClass().getSimpleName()+"is a " + item.typeOfAcidNucleic.getTypeOfAcidNucleic() + " virus.");
+		}
         launch(args);
 
     }
