@@ -1,9 +1,9 @@
 package Virus;
 
 public class Virus implements Attack {
-    public double size;
-    public AcidNucleic typeOfAcidNucleic;
-    public Capsid typeOfNucleocapsid;
+    private double size;
+    private AcidNucleic typeOfAcidNucleic;
+    private Capsid typeOfNucleocapsid;
 
     public double getSize() {
         return size;

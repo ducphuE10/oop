@@ -5,7 +5,7 @@ import Virus.Capsid;
 
 public class RhinoVirus extends NonenvelopeVirus {
     //TODO add more attribute
-    public String ssRNAgen;
+    private String ssRNAgen;
     //TODO add more attribute
     public RhinoVirus(double size, AcidNucleic typeOfAcidNucleic, Capsid icosahedral,String ssRNAgen) {
         super(size, typeOfAcidNucleic, icosahedral);

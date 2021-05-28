@@ -5,12 +5,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public class NoroVirus extends NonenvelopeVirus {
-    public String ConstantDomain;
-    public String VariableDomain;
-    public String PDomain;
-    public String SDomain;
-    public String RNA;
-    public String introVirus;
+    private String ConstantDomain;
+    private String VariableDomain;
+    private String PDomain;
+    private String SDomain;
+    private String RNA;
+    private String introVirus;
 
     public NoroVirus(double size, AcidNucleic typeOfAcidNucleic, Capsid typeOfNucleocapsid, String constantDomain, String variableDomain, String PDomain, String SDomain, String RNA, String introVirus) {
         super(size, typeOfAcidNucleic, typeOfNucleocapsid);

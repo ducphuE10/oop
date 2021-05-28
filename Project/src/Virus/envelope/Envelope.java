@@ -6,7 +6,7 @@ import Virus.Capsid;
 import Virus.Virus;
 
 public class Envelope{
-    public String envelopeOfVirus;
+    private String envelopeOfVirus;
 
     public Envelope(String envelopeOfVirus) {
         this.envelopeOfVirus = envelopeOfVirus;

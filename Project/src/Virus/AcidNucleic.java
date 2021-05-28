@@ -1,11 +1,12 @@
 package Virus;
 
 public class AcidNucleic{
-    public String typeOfAcidNucleic;
+    private String typeOfAcidNucleic;
 
     public AcidNucleic(String typeOfAcidNucleic) {
         this.typeOfAcidNucleic = typeOfAcidNucleic;
     }
+    
     public String getTypeOfAcidNucleic() {
         return typeOfAcidNucleic;
     }

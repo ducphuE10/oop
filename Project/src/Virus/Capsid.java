@@ -1,7 +1,7 @@
 package Virus;
 
 public class Capsid {
-    public String typeOfStructureOfCapsid;
+    private String typeOfStructureOfCapsid;
 
     public String getTypeOfStructureOfCapsid() {
         return typeOfStructureOfCapsid;

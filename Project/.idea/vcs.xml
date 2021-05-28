@@ -2,9 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Exercises_Lab" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Exercises_Lab/Lab05" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Exercises_Lab/New folder" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Woring Space" vcs="Git" />
   </component>
 </project>

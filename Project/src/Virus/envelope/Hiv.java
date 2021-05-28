@@ -4,18 +4,18 @@ import Virus.AcidNucleic;
 import Virus.Capsid;
 
 public class Hiv extends EnvelopeVirus{
-    public String Gp120;
-    public String Gp41;
-    public String HumanClass1;
-    public String HumanClass2;
-    public String Integrase;
-    public Envelope envelopeOfVirus;
-    public String Nucleocapsid;
-    public String Protease;
-    public String RNA;
-    public String Reverse;
-    public String MatrixProtein;
-    public String ProteinP79;
+    private String Gp120;
+    private String Gp41;
+    private String HumanClass1;
+    private String HumanClass2;
+    private String Integrase;
+    private Envelope envelopeOfVirus;
+    private String Nucleocapsid;
+    private String Protease;
+    private String RNA;
+    private String Reverse;
+    private String MatrixProtein;
+    private String ProteinP79;
 
 
     public Hiv(double size, AcidNucleic typeOfAcidNucleic, Capsid typeOfNucleocapsid, Envelope envelopeOfVirus, String gp120, String gp41, String humanClass1, String humanClass2, String integrase, String nucleocapsid, String protease, String RNA, String reverse,String MatrixProtein,String P79) {
@@ -116,6 +116,12 @@ public class Hiv extends EnvelopeVirus{
     @Override
     public void attackCell(){
 
+    }
+    public String getProteinP79() {
+    	return this.ProteinP79;
+    }
+    public String getMatrixProtein() {
+    	return this.MatrixProtein;
     }
 }
 

@@ -34,7 +34,6 @@ public class GeneralVirusController {
     public Scene scene;
     double x = 0, y = 0;
 
-    public MediaPlayer mediaPlayer;
     @FXML
     public Slider progress, volumnBar;
     @FXML
@@ -70,7 +69,6 @@ public class GeneralVirusController {
         slider.play();
         expandButton.setVisible(false);
         menuBar.setTranslateX(-200);
-
     }
 
     @FXML
@@ -88,15 +86,14 @@ public class GeneralVirusController {
     @FXML
     void mouseEnteredCollapse() {
         collapseButton.setText("《");
-
     }
 
     @FXML
     void mouseExitedCollapse() {
         collapseButton.setText("〈");
-
     }
-
+    
+    //exit button ( X )
     @FXML
     void exit(ActionEvent e) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -124,12 +121,14 @@ public class GeneralVirusController {
             System.exit(0);
         }
     }
-
+    
+    //minimize button ( - )
     @FXML
     void minimize(ActionEvent e) {
         ((Stage) (((Button) e.getSource()).getScene().getWindow())).setIconified(true);
     }
-
+    
+    //Drag
     @FXML
     void dragged(MouseEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -143,7 +142,8 @@ public class GeneralVirusController {
         y = event.getSceneY();
 
     }
-
+    
+    //structure of virus
     @FXML
     public void virusStructure(ActionEvent e) {
         media.setVisible(false);
@@ -153,6 +153,8 @@ public class GeneralVirusController {
         collapse();
 
     }
+    
+    //animation of virus
     @FXML
     public void animation(ActionEvent e){
 
@@ -162,18 +164,18 @@ public class GeneralVirusController {
         structure.setVisible(false);
         collapse();
    }
-
+    
+    //video demonstrate virus
     @FXML
     public void video(ActionEvent e) {
-
         animationView.setVisible(false);
         media.setVisible(true);
         playingBar.setVisible(true);
         structure.setVisible(false);
         collapse();
-
     }
-
+    
+    // home button
     @FXML
     public void home(ActionEvent e) throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/GUI/mainmenu/FXML/mainFxml.fxml")));
@@ -182,7 +184,8 @@ public class GeneralVirusController {
         stage.setScene(scene);
         stage.show();
     }
-
+    
+    //
     @FXML
     public void showPlayingBar(){
         TranslateTransition slider = new TranslateTransition();
