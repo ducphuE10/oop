@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="542.0" prefWidth="816.0" styleClass="background" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.mainmenu.ControllerHelp">
+<AnchorPane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="542.0" prefWidth="816.0" styleClass="background" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.mainmenu.ControllerHelp">
     <children>
         <Label alignment="TOP_CENTER" layoutX="302.0" layoutY="31.0" prefHeight="49.0" prefWidth="213.0" text="WELCOME" textFill="WHITE">
             <font>
                 <Font name="Calibri Bold Italic" size="40.0" />
-            </font>
-        </Label>
-        <Label layoutX="27.0" layoutY="209.0" text="User Manual: &#10;Lmao trạch đông&#10;bủh bủh&#10;dảk dảk&#10;Onichannnnnn&#10;are are&#10;Pỏnhubbbb" textFill="WHITE">
-            <font>
-                <Font name="Calibri Bold" size="20.0" />
             </font>
         </Label>
         <HBox alignment="TOP_RIGHT" layoutX="694.0" layoutY="5.0" prefHeight="26.0" prefWidth="114.0">
@@ -30,10 +26,15 @@
             </Button>
          </children>
         </HBox>
-      <Label layoutX="27.0" layoutY="129.0" text="Purpose: Help users have more knowledge about&#10;viruses and how to prevent them" textFill="WHITE">
+      <Label layoutX="27.0" layoutY="80.0" text="Purpose: Help users have more knowledge about&#10;viruses and how to prevent them" textFill="WHITE">
          <font>
             <Font name="Calibri Bold" size="20.0" />
          </font>
       </Label>
+      <TextArea layoutX="17.0" layoutY="144.0" prefHeight="261.0" prefWidth="429.0" stylesheets="@../css/helptext.css" text="Help: &#10;+To use this application:&#10;First, in the main menu, you must choose type of viruses. There are two main type of viruses (have envelope or without envelope).&#10;Then, you will choose (click) the specific virus to research.&#10;After selecting the virus you want, the structure of the virus will appear first. On your left side, hovering the button &gt; brings up the navigation bar. You can choose to see the video demonstrate, animation of virus or return to the main menu.&#10;+To exit the application:&#10;Click on the &quot;Exit&quot; button on the main menu or in the upper right corner then choose &quot;YES&quot;" wrapText="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </TextArea>
     </children>
 </AnchorPane>

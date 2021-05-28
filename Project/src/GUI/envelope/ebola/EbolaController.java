@@ -46,84 +46,20 @@ public class EbolaController extends GeneralVirusController implements Initializ
     public void initialize(URL agr0, ResourceBundle agr1) {
     }
 
-    @Override
-    public void video(ActionEvent e) {
-        super.video(e);
-        File file = new File(this.path);
-        Media m = new Media(file.toURI().toString());
-        mediaPlayer = new MediaPlayer(m);
-        media.setMediaPlayer(mediaPlayer);
 
-        volumnBar.setValue(mediaPlayer.getVolume() * 100);
-        volumnBar.valueProperty().addListener(new InvalidationListener() {
-            @Override
-            public void invalidated(Observable observable) {
-                mediaPlayer.setVolume(volumnBar.getValue() / 100);
-                if (volumnBar.getValue() == 0) {
-                    muted.setVisible(true);
-                    volumn.setVisible(false);
-                } else {
-                    volumn.setVisible(true);
-                    muted.setVisible(false);
-                }
-            }
-        });
-
-        mediaPlayer.currentTimeProperty().addListener(new ChangeListener<Duration>() {
-                                                          @Override
-                                                          public void changed(ObservableValue<? extends Duration> observable, Duration oldValue, Duration newValue) {
-                                                              progress.setValue(newValue.toSeconds());
-                                                              moment.setText("" + String.format("%02d", (int) newValue.toSeconds() / 60) + ":" + String.format("%02d", (int) newValue.toSeconds() % 60));
-                                                          }
-                                                      }
-        );
-
-        progress.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                mediaPlayer.seek(Duration.seconds(progress.getValue()));
-            }
-        });
-
-        progress.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                mediaPlayer.seek(Duration.seconds(progress.getValue()));
-            }
-        });
-
-        mediaPlayer.setOnReady(new Runnable() {
-            @Override
-            public void run() {
-                double total = mediaPlayer.getStopTime().toSeconds();
-                progress.setMax(total);
-            }
-        });
-
-        mediaPlayer.play();
-    }
-
-    @Override
-    public void virusStructure(ActionEvent e) {
-        super.virusStructure(e);
-        try {
-            mediaPlayer.stop();
-        } catch (Exception e1) {
-        }
-    }
-
+//BACK TO MAIN MENU
     @Override
     public void home(ActionEvent e) throws IOException {
         super.home(e);
         try {
             mediaPlayer.stop();
         } catch (Exception e1) {
-        }
-
-
-
+        	}
     }
 
+    
+//RUN ANIMATION
+// IMPLEMENT RUN ANIMATION
     @Override
     public void animation(ActionEvent e) {
         super.animation(e);
@@ -144,15 +80,13 @@ public class EbolaController extends GeneralVirusController implements Initializ
             ARN.setOpacity(0);
             ARN.setTranslateX(0);
             ARN.setTranslateY(0);
-            ARN.setRotate(110);
-            cell1.setOpacity(1);
+            cell1.setOpacity(0);
             cell2.setOpacity(0);
         } catch (Exception e1) {
-        }
-
+        	}
     }
-
     @FXML
+
     public void runAnimation(){
         virus1.setOpacity(1);
         virus1.setTranslateX(0);
@@ -246,42 +180,89 @@ public class EbolaController extends GeneralVirusController implements Initializ
 
     }
 
+//IMPLEMENT VIDEO
+    @Override
+    public void video(ActionEvent e) {
+        super.video(e);
+        File file = new File(this.path);
+        Media m = new Media(file.toURI().toString());
+        mediaPlayer = new MediaPlayer(m);
+        media.setMediaPlayer(mediaPlayer);
+
+        volumnBar.setValue(mediaPlayer.getVolume() * 100);
+        volumnBar.valueProperty().addListener(new InvalidationListener() {
+            @Override
+            public void invalidated(Observable observable) {
+                mediaPlayer.setVolume(volumnBar.getValue() / 100);
+                if (volumnBar.getValue() == 0) {
+                    muted.setVisible(true);
+                    volumn.setVisible(false);
+                } else {
+                    volumn.setVisible(true);
+                    muted.setVisible(false);
+                }
+            }
+        });
+
+        mediaPlayer.currentTimeProperty().addListener(new ChangeListener<Duration>() {
+                                                          @Override
+                                                          public void changed(ObservableValue<? extends Duration> observable, Duration oldValue, Duration newValue) {
+                                                              progress.setValue(newValue.toSeconds());
+                                                              moment.setText("" + String.format("%02d", (int) newValue.toSeconds() / 60) + ":" + String.format("%02d", (int) newValue.toSeconds() % 60));
+                                                          }
+                                                      }
+        );
+
+        progress.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                mediaPlayer.seek(Duration.seconds(progress.getValue()));
+            }
+        });
+
+        progress.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                mediaPlayer.seek(Duration.seconds(progress.getValue()));
+            }
+        });
+
+        mediaPlayer.setOnReady(new Runnable() {
+            @Override
+            public void run() {
+                double total = mediaPlayer.getStopTime().toSeconds();
+                progress.setMax(total);
+            }
+        });
+
+        mediaPlayer.play();
+    }
+//IMPLEMENT VIDEO
     @FXML
     public void play(ActionEvent e) {
         mediaPlayer.play();
         mediaPlayer.setRate(1);
-
     }
-
     @FXML
     public void pause(ActionEvent e) {
         mediaPlayer.pause();
-
     }
-
     @FXML
     public void skipUp(ActionEvent e) {
         mediaPlayer.seek(mediaPlayer.getCurrentTime().add(javafx.util.Duration.seconds(5)));
-
     }
-
     @FXML
     public void skipDown(ActionEvent e) {
         mediaPlayer.seek(mediaPlayer.getCurrentTime().add(javafx.util.Duration.seconds(-5)));
     }
-
     @FXML
     public void slow(ActionEvent e) {
         mediaPlayer.setRate(2);
-
     }
-
     @FXML
     public void fast(ActionEvent e) {
         mediaPlayer.setRate(2);
-
     }
-
     @FXML
     public void mute() {
         if (volumnBar.getValue() > 0) {
@@ -293,36 +274,38 @@ public class EbolaController extends GeneralVirusController implements Initializ
             muted.setVisible(false);
             volumn.setVisible(true);
         }
-
     }
 
+    
+//SET STRUCTURE FOR EBOLA VIRUS
+    @Override
+    public void virusStructure(ActionEvent e) {
+        super.virusStructure(e);
+        try {
+            mediaPlayer.stop();
+        } catch (Exception e1) {
+        }
+    }
+//SET STRUCTURE FOR EBOLA VIRUS
     @FXML
     void showEnvelope(ActionEvent event) {
-        textExplain.setText(Main.ebola.envelopeOfVirus.getEnvelopeOfVirus());
-
+        textExplain.setText(Main.ebola.getEnvelopeOfVirus().getEnvelopeOfVirus());
     }
-
     @FXML
     void showGlyPortein(ActionEvent event) {
-        textExplain.setText(Main.ebola.GlyProtein);
-
+        textExplain.setText(Main.ebola.getGlyProtein());
     }
-
     @FXML
     void showNucleprotein(ActionEvent event) {
-        textExplain.setText(Main.ebola.Nucleprotein);
+        textExplain.setText(Main.ebola.getNucleprotein());
     }
-
     @FXML
     void showRNA(ActionEvent event) {
-        textExplain.setText(Main.ebola.RNA);
+        textExplain.setText(Main.ebola.getRNA());
     }
-
     @FXML
     void showVP(ActionEvent event) {
-        textExplain.setText(Main.ebola.VP);
-
+        textExplain.setText(Main.ebola.getVP());
     }
-
 
 }

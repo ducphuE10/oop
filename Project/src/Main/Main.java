@@ -1,5 +1,6 @@
 package Main;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -18,6 +19,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -33,6 +35,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         try {
             Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("../GUI/mainmenu/FXML/intro.fxml")));
+            primaryStage.getIcons().add(new Image(new File("src/GUI/source/media/IconVirus.png").toURI().toString()));
             primaryStage.setTitle("Virus");
             primaryStage.setResizable(false);
             primaryStage.initStyle(StageStyle.DECORATED);
@@ -44,6 +47,8 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
+    
+    //SETUP INFORMATION FOR ALL VIRUSES
     public static void setup(){
         NoroVirus noro1 = new NoroVirus(-1,
                 new AcidNucleic("RNA"),
@@ -269,8 +274,6 @@ public class Main extends Application {
         		" surface until they attach to the host cell membrane."
         		);
    
-        
-        
         RhinoVirus rhino1 = new RhinoVirus(-1,
         		new AcidNucleic("RNA"),
         		new Capsid("An icosahedral virion structure of HRV with a pentamer structure shown highlighting the external capsid proteins (VP1, VP2, and VP3) organization. VP1 is responsible for receptor engagement and VP4 is located beneath each monomeric unit and is responsible for genomic association with VPg.There are 60 copies of each of these proteins assembled as an icosahedron. Antibodies are a major defense against infection with the epitopes lying on the exterior regions of VP1-VP3."),
@@ -283,10 +286,10 @@ public class Main extends Application {
         PolioVirus polio1 = new PolioVirus(-1,
         		new AcidNucleic("RNA"),
         		new Capsid("The poliovirus capsid contains 60 copies each of the four viral polypeptides VP1, VP2, VP3, and VP4. The arrangement of proteins in the capsid creates icosahedral symmetry. The virion surface is covered with star-shaped mesas at its fivefold axes surrounded by deep canyons and three-bladed propellers.\r\n"
-		+ "These are situated at threefold axes separated by saddle depressions straddling twofold axes. Capsid proteins VP1, VP2, and VP3 all have an eight-stranded β-barrel fold, but have different shaped loops on their N- and C-terminal extensions."),
-        		"The genome is a single-stranded positive-sense RNA (+ssRNA) genome that is about 7500 nucleotides long. The viral particle is about 30 nm in diameter with icosahedral symmetry. Because of its short genome and its simple composition—only RNA and a nonenveloped icosahedral protein coat that encapsulates it, poliovirus is widely regarded as the simplest significant virus.",
-        		"VPg (viral protein genome-linked) is a protein that is covalently attached to the 5′ end of positive strand viral RNA and acts as a primer during RNA synthesis in virus polio. The primer activity of VPg occurs when the protein becomes uridylated, providing a free hydroxyl that can be extended by the virally encoded RNA-dependent RNA polymerase. VPg also has a role in translation initiation by acting like a 5' mRNA cap. VPg was first described in initial investigations of poliovirus RNA as a protein covalently attached to the 5' end of the genome"
-);
+        				+"These are situated at threefold axes separated by saddle depressions straddling twofold axes. Capsid proteins VP1, VP2, and VP3 all have an eight-stranded β-barrel fold, but have different shaped loops on their N- and C-terminal extensions."),
+        				"The genome is a single-stranded positive-sense RNA (+ssRNA) genome that is about 7500 nucleotides long. The viral particle is about 30 nm in diameter with icosahedral symmetry. Because of its short genome and its simple composition—only RNA and a nonenveloped icosahedral protein coat that encapsulates it, poliovirus is widely regarded as the simplest significant virus.",
+        				"VPg (viral protein genome-linked) is a protein that is covalently attached to the 5′ end of positive strand viral RNA and acts as a primer during RNA synthesis in virus polio. The primer activity of VPg occurs when the protein becomes uridylated, providing a free hydroxyl that can be extended by the virally encoded RNA-dependent RNA polymerase. VPg also has a role in translation initiation by acting like a 5' mRNA cap. VPg was first described in initial investigations of poliovirus RNA as a protein covalently attached to the 5' end of the genome"
+        				);
         
         
         ebola = ebola1;
@@ -295,7 +298,6 @@ public class Main extends Application {
         corona = corona1;
         polio = polio1;
         rhino = rhino1;
-
     }
 
 
@@ -309,9 +311,8 @@ public class Main extends Application {
         listOfVirus.add(rhino);
         listOfVirus.add(polio);
         for (Virus item : listOfVirus){
-        	System.out.println(item.getClass().getSimpleName()+"is a " + item.typeOfAcidNucleic.getTypeOfAcidNucleic() + " virus.");
+        	System.out.println(item.getClass().getSimpleName()+" is a " + item.getTypeOfAcidNucleic().getTypeOfAcidNucleic() + " virus.");
 		}
         launch(args);
-
     }
 }

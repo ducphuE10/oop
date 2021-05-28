@@ -57,7 +57,53 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="animationView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <AnchorPane fx:id="animationView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fx:id="cell1" fitHeight="552.0" fitWidth="1024.0" layoutY="24.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="24.0">
+                     <image>
+                        <Image url="@../media/Cell1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="cell2" fitHeight="550.0" fitWidth="1024.0" layoutY="27.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/Cell2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="ARN1" fitHeight="191.0" fitWidth="197.0" layoutX="229.0" layoutY="359.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/ARN.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="polio1" fitHeight="173.0" fitWidth="285.0" layoutX="-5.0" layoutY="24.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/Polio1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="polio3" fitHeight="173.0" fitWidth="285.0" layoutX="109.0" layoutY="208.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/Polio3.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="polio2" fitHeight="173.0" fitWidth="285.0" layoutX="109.0" layoutY="208.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/Polio2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="ARN2" fitHeight="191.0" fitWidth="208.0" layoutX="224.0" layoutY="368.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/Polio%20(7).png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="replay" focusTraversable="false" layoutX="274.0" layoutY="40.0" mnemonicParsing="false" onAction="#runAnimation" prefHeight="23.0" prefWidth="87.0" stylesheets="@../css/strucButton.css" text="PLAY">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Button>
+                  <ImageView fx:id="polio4" fitHeight="173.0" fitWidth="321.0" layoutX="186.0" layoutY="368.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/Polio1.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="playingBar" layoutX="55.0" layoutY="509.0" prefHeight="30.0" prefWidth="950.0" style="-fx-background-color: #FFFFFF2C;" visible="false" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="28.0">

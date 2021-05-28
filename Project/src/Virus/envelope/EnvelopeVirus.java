@@ -3,7 +3,7 @@ import Virus.Virus;
 import Virus.Capsid;
 import Virus.AcidNucleic;
 public class EnvelopeVirus extends Virus{
-    public Envelope envelopeOfVirus;
+    private Envelope envelopeOfVirus;
 
     public EnvelopeVirus(double size, AcidNucleic typeOfAcidNucleic, Capsid typeOfNucleocapsid, Envelope envelopeOfVirus) {
         super(size, typeOfAcidNucleic, typeOfNucleocapsid);

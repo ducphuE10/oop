@@ -5,10 +5,10 @@ import Virus.Capsid;
 import Virus.Virus;
 
 public class CoronaVirus extends EnvelopeVirus {
-    //TODO add more attribute
-	public String evenlopeProtein;
-	public String mprotein;
-	public String spike;
+
+	private String evenlopeProtein;
+	private String mprotein;
+	private String spike;
 
 	
     public CoronaVirus(double size, AcidNucleic typeOfAcidNucleic, Capsid typeOfNucleocapsid,Envelope envelopeOfVirus,String evenlopeProtein,String mprotein,String spike) {
@@ -41,7 +41,4 @@ public class CoronaVirus extends EnvelopeVirus {
 	public void setSpike(String spike) {
 		this.spike = spike;
 	}
-
-
-    
 }

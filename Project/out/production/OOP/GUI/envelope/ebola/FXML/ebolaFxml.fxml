@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -12,7 +19,7 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="576.0" prefWidth="1024.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.envelope.ebola.EbolaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="576.0" prefWidth="1024.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.envelope.ebola.EbolaController">
    <children>
       <AnchorPane fx:id="viewField" maxHeight="-Infinity" maxWidth="-Infinity" onMousePressed="#collapse" prefHeight="470.0" prefWidth="950.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -25,30 +32,27 @@
                      </image>
                   </ImageView>
                   <Label fx:id="textExplain" alignment="TOP_LEFT" focusTraversable="false" layoutX="84.0" layoutY="354.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="190.0" prefWidth="842.0" wrapText="true" />
-                  <Button layoutX="222.0" layoutY="313.0" mnemonicParsing="false" onAction="#showGlyPortein" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: white;" text="Glycoprotein">
+                  <Button layoutX="222.0" layoutY="313.0" mnemonicParsing="false" onAction="#showGlyPortein" prefHeight="26.0" prefWidth="108.0" stylesheets="@../css/strucButton.css" text="Glycoprotein">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button layoutX="265.0" layoutY="149.0" mnemonicParsing="false" onAction="#showRNA" prefHeight="26.0" prefWidth="108.0" style="-fx-background-color: white;" text="RNA genome">
+                  <Button layoutX="265.0" layoutY="149.0" mnemonicParsing="false" onAction="#showRNA" prefHeight="26.0" prefWidth="108.0" stylesheets="@../css/strucButton.css" text="RNA genome">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button layoutX="324.0" layoutY="100.0" mnemonicParsing="false" onAction="#showNucleprotein" prefHeight="26.0" prefWidth="114.0" style="-fx-background-color: white;" text="Nucleoprotein">
+                  <Button layoutX="324.0" layoutY="100.0" mnemonicParsing="false" onAction="#showNucleprotein" prefHeight="26.0" prefWidth="114.0" stylesheets="@../css/strucButton.css" text="Nucleoprotein">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button layoutX="373.0" layoutY="26.0" mnemonicParsing="false" onAction="#showVP" prefHeight="54.0" prefWidth="138.0" style="-fx-background-color: white;" text="VP40,VP24:Proteins enablevirus reproduction" wrapText="true">
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="366.0" layoutY="14.0" mnemonicParsing="false" onAction="#showVP" prefHeight="66.0" prefWidth="145.0" stylesheets="@../css/strucButton.css" text="VP40,VP24:Proteins&#10;enablevirus &#10;reproduction" wrapText="true" AnchorPane.leftAnchor="366.0">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
-                     <padding>
-                        <Insets left="-2.0" />
-                     </padding>
                   </Button>
-                  <Button layoutX="668.0" layoutY="221.0" mnemonicParsing="false" onAction="#showEnvelope" prefHeight="43.0" prefWidth="114.0" style="-fx-background-color: white;" text="Viral envelope">
+                  <Button layoutX="668.0" layoutY="221.0" mnemonicParsing="false" onAction="#showEnvelope" prefHeight="43.0" prefWidth="114.0" stylesheets="@../css/strucButton.css" text="Viral envelope">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -92,9 +96,9 @@
                         <Image url="@../media/arn.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="replay" focusTraversable="false" layoutX="82.0" layoutY="86.0" mnemonicParsing="false" onAction="#runAnimation" prefHeight="35.0" prefWidth="83.0" style="-fx-background-color: #cfcccc;" text="PLAY">
+                  <Button fx:id="replay" focusTraversable="false" layoutX="82.0" layoutY="86.0" mnemonicParsing="false" onAction="#runAnimation" prefHeight="23.0" prefWidth="87.0" stylesheets="@../css/strucButton.css" text="PLAY">
                      <font>
-                        <Font name="System Italic" size="12.0" />
+                        <Font name="System Italic" size="16.0" />
                      </font>
                   </Button>
                </children></AnchorPane>

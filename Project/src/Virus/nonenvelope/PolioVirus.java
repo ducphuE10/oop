@@ -3,8 +3,8 @@ import Virus.AcidNucleic;
 import Virus.Capsid;
 
 public class PolioVirus extends NonenvelopeVirus{
-	public String ssRNA;
-	public String VPg;
+	private String ssRNA;
+	private String VPg;
     public PolioVirus(double size, AcidNucleic typeOfAcidNucleic, Capsid typeOfNucleocapsid,String ssRNA,String VPg) {
         super(size, typeOfAcidNucleic, typeOfNucleocapsid);
         this.ssRNA = ssRNA;

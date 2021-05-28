@@ -32,18 +32,18 @@
                           </image>
                       </ImageView>
                   <Label fx:id="textExplain" alignment="TOP_LEFT" layoutX="665.0" layoutY="63.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="479.0" prefWidth="349.0" wrapText="true" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="665.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="63.0" />
-                  <Button layoutX="134.0" layoutY="301.0" mnemonicParsing="false" onAction="#showLipidBilayer" prefHeight="43.0" prefWidth="91.0" style="-fx-background-color: transparent;" text="Lipid bilayer" textFill="TRANSPARENT" />
-                  <Button layoutX="134.0" layoutY="236.0" mnemonicParsing="false" onAction="#showRNA" prefHeight="30.0" prefWidth="43.0" style="-fx-background-color: transparent;" text="RNA" textFill="TRANSPARENT" />
-                  <Button layoutX="134.0" layoutY="173.0" mnemonicParsing="false" onAction="#showProtease" prefHeight="35.0" prefWidth="64.0" style="-fx-background-color: transparent;" text="Protease" textFill="TRANSPARENT" />
-                  <Button layoutX="144.0" layoutY="124.0" mnemonicParsing="false" onAction="#showHumanClass1" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: transparent;" text="Human Leukocyte" textFill="TRANSPARENT" />
-                  <Button layoutX="458.0" layoutY="84.0" mnemonicParsing="false" onAction="#showGp120" prefHeight="14.0" prefWidth="154.0" style="-fx-background-color: transparent;" text="gp120" textFill="TRANSPARENT" />
-                  <Button layoutX="475.0" layoutY="122.0" mnemonicParsing="false" onAction="#showGp41" prefHeight="14.0" prefWidth="134.0" style="-fx-background-color: transparent;" text="gp41" textFill="TRANSPARENT" />
-                  <Button layoutX="515.0" layoutY="186.0" mnemonicParsing="false" onAction="#showProteinP79" prefHeight="23.0" prefWidth="102.0" style="-fx-background-color: transparent;" text="Protein p7,9" textFill="TRANSPARENT" />
-                  <Button layoutX="542.0" layoutY="251.0" mnemonicParsing="false" onAction="#showIntegrase" prefHeight="18.0" prefWidth="75.0" style="-fx-background-color: transparent;" text="integrase" textFill="TRANSPARENT" />
-                  <Button layoutX="465.0" layoutY="448.0" mnemonicParsing="false" onAction="#showMatrixProtein" prefHeight="26.0" prefWidth="134.0" style="-fx-background-color: transparent;" text="Matrix Protein" textFill="TRANSPARENT" AnchorPane.leftAnchor="465.0" />
-                  <Button layoutX="515.0" layoutY="365.0" mnemonicParsing="false" onAction="#showReverse" prefHeight="34.0" prefWidth="102.0" style="-fx-background-color: transparent;" text="Reverse Transcriptase" textFill="TRANSPARENT" />
-                  <Button layoutX="144.0" layoutY="399.0" mnemonicParsing="false" onAction="#showHumanClass2" prefHeight="30.0" prefWidth="134.0" style="-fx-background-color: transparent;" text="Human Leukocyte Class 2" textFill="TRANSPARENT" />
-                  <Button layoutX="211.0" layoutY="447.0" mnemonicParsing="false" onAction="#showNucleocapsid" prefHeight="26.0" prefWidth="172.0" style="-fx-background-color: transparent;" text="Nucleocapsid protein p24" textFill="TRANSPARENT" />
+                  <Button layoutX="132.0" layoutY="303.0" mnemonicParsing="false" onAction="#showLipidBilayer" prefHeight="31.0" prefWidth="91.0" stylesheets="@../css/strucButton.css" text="Lipid bilayer" />
+                  <Button layoutX="127.0" layoutY="236.0" mnemonicParsing="false" onAction="#showRNA" prefHeight="31.0" prefWidth="50.0" stylesheets="@../css/strucButton.css" text="RNA" />
+                  <Button layoutX="134.0" layoutY="173.0" mnemonicParsing="false" onAction="#showProtease" prefHeight="31.0" prefWidth="75.0" stylesheets="@../css/strucButton.css" text="Protease" />
+                  <Button layoutX="127.0" layoutY="124.0" mnemonicParsing="false" onAction="#showHumanClass1" prefHeight="34.0" prefWidth="134.0" stylesheets="@../css/strucButton.css" text="Human Leukocyte" />
+                  <Button layoutX="458.0" layoutY="78.0" mnemonicParsing="false" onAction="#showGp120" prefHeight="31.0" prefWidth="154.0" stylesheets="@../css/strucButton.css" text="gp120" />
+                  <Button layoutX="489.0" layoutY="124.0" mnemonicParsing="false" onAction="#showGp41" prefHeight="31.0" prefWidth="134.0" stylesheets="@../css/strucButton.css" text="gp41" />
+                  <Button layoutX="515.0" layoutY="191.0" mnemonicParsing="false" onAction="#showProteinP79" prefHeight="31.0" prefWidth="102.0" stylesheets="@../css/strucButton.css" text="Protein p7,9" />
+                  <Button layoutX="542.0" layoutY="251.0" mnemonicParsing="false" onAction="#showIntegrase" prefHeight="31.0" prefWidth="75.0" stylesheets="@../css/strucButton.css" text="integrase" />
+                  <Button layoutX="465.0" layoutY="448.0" mnemonicParsing="false" onAction="#showMatrixProtein" prefHeight="31.0" prefWidth="134.0" stylesheets="@../css/strucButton.css" text="Matrix Protein" AnchorPane.leftAnchor="465.0" />
+                  <Button layoutX="515.0" layoutY="365.0" mnemonicParsing="false" onAction="#showReverse" prefHeight="34.0" prefWidth="142.0" stylesheets="@../css/strucButton.css" text="Reverse Transcriptase" />
+                  <Button layoutX="107.0" layoutY="399.0" mnemonicParsing="false" onAction="#showHumanClass2" prefHeight="31.0" prefWidth="154.0" stylesheets="@../css/strucButton.css" text="Human Leukocyte Class 2" />
+                  <Button layoutX="211.0" layoutY="447.0" mnemonicParsing="false" onAction="#showNucleocapsid" prefHeight="31.0" prefWidth="172.0" stylesheets="@../css/strucButton.css" text="Nucleocapsid protein p24" />
                   <Label layoutX="340.0" layoutY="14.0" text="Virus HIV">
                      <font>
                         <Font name="System Bold Italic" size="28.0" />
@@ -51,7 +51,58 @@
                   </Label>
                </children>
             </AnchorPane>
-                <AnchorPane fx:id="animationView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                <AnchorPane fx:id="animationView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fx:id="cell" fitHeight="373.0" fitWidth="1024.0" layoutY="180.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/cell.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="hiv1" fitHeight="165.0" fitWidth="293.0" layoutX="86.0" layoutY="40.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../media/hiv1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="hiv2" fitHeight="125.0" fitWidth="125.0" layoutX="755.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/hiv2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="ARN" fitHeight="165.0" fitWidth="298.0" layoutX="671.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/ARN.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="hiv3" fitHeight="160.0" fitWidth="255.0" layoutX="695.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/hiv3.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="hivb1" fitHeight="150.0" fitWidth="200.0" layoutX="477.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/hiv1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="hivb3" fitHeight="150.0" fitWidth="200.0" layoutX="771.0" layoutY="360.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/hiv1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="hivb2" fitHeight="150.0" fitWidth="200.0" layoutX="655.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/hiv1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="hivb4" fitHeight="150.0" fitWidth="200.0" layoutX="880.0" layoutY="438.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/hiv1.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="play" layoutX="366.0" layoutY="40.0" mnemonicParsing="false" onAction="#runAnimation" prefHeight="23.0" prefWidth="87.0" stylesheets="@../css/strucButton.css" text="PLAY">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font></Button>
+               </children></AnchorPane>
             </children>
         </AnchorPane>
         <AnchorPane fx:id="playingBar" layoutX="55.0" layoutY="509.0" prefHeight="30.0" prefWidth="950.0" style="-fx-background-color: #FFFFFF2C;" visible="false" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="28.0">

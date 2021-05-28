@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -13,7 +20,7 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="576.0" prefWidth="1024.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.nonenvelope.noro.NoroController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="576.0" prefWidth="1024.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.nonenvelope.noro.NoroController">
     <children>
         <AnchorPane fx:id="viewField" layoutX="51.0" layoutY="30.0" maxHeight="-Infinity" maxWidth="-Infinity" onMousePressed="#collapse" prefHeight="546.0" prefWidth="1024.0" style="-fx-border-width: 2; -fx-border-color: #2a0704;" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="28.0">
             <children>
@@ -55,7 +62,34 @@
                   <Button layoutX="377.0" layoutY="120.0" mnemonicParsing="false" onAction="#showRNA" prefHeight="72.0" prefWidth="78.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" text="RNA" textFill="TRANSPARENT" />
                </children>
             </AnchorPane>
-                <AnchorPane fx:id="animationView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                <AnchorPane fx:id="animationView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fx:id="cell1" fitHeight="389.0" fitWidth="1024.0" layoutX="-2.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <image>
+                        <Image url="@../media/cell1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="cell2" fitHeight="389.0" fitWidth="1024.0" layoutX="10.0" layoutY="167.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <image>
+                        <Image url="@../media/cell2.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="virus1" fitHeight="109.0" fitWidth="118.0" layoutX="898.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/virus1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="virus2" fitHeight="109.0" fitWidth="118.0" layoutX="579.0" layoutY="412.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/virus2.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="replay" layoutX="129.0" layoutY="44.0" mnemonicParsing="false" onAction="#runAnimation" prefHeight="23.0" prefWidth="87.0" style="-fx-background-color: #cfcccc;" text="PLAY">
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Button>
+               </children></AnchorPane>
             </children>
         </AnchorPane>
         <AnchorPane fx:id="playingBar" layoutX="55.0" layoutY="509.0" prefHeight="30.0" prefWidth="950.0" style="-fx-background-color: #FFFFFF2C;" visible="false" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="28.0">
