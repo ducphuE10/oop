@@ -48,7 +48,7 @@ public class NoroController extends GeneralVirusController implements Initializa
     @FXML
     private ImageView cell1, cell2, virus1, virus2;
     @FXML
-    private Button replay,animationButton;
+    private Button replay;
 
 
     @Override
@@ -69,17 +69,10 @@ public class NoroController extends GeneralVirusController implements Initializa
   
     //RUN ANIMATION
     @Override
-    public void animation(ActionEvent e) {
+    public void animation(ActionEvent e) throws IOException {
         super.animation(e);
         try {
             replay.setText("PLAY");
-            replay.setVisible(true);
-            cell1.setOpacity(1);
-            cell2.setOpacity(0);
-            virus1.setOpacity(1);
-            virus1.setTranslateX(0);
-            virus1.setTranslateY(0);
-            virus2.setOpacity(0);
             mediaPlayer.stop();
         } catch (Exception e1) {
         }
@@ -88,7 +81,6 @@ public class NoroController extends GeneralVirusController implements Initializa
 
     @FXML
     public void runAnimation(ActionEvent e) {
-        animationButton.setDisable(true);
         replay.setText("REPLAY");
         replay.setVisible(false);
         cell1.setOpacity(1);
@@ -132,7 +124,7 @@ public class NoroController extends GeneralVirusController implements Initializa
                         @Override
                         public void handle(ActionEvent e) {
                             replay.setVisible(true);
-                            animationButton.setDisable(false);
+
                         }
                     });
                     tmVirus21.play();

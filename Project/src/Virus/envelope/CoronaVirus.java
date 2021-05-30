@@ -3,6 +3,9 @@ package Virus.envelope;
 import Virus.AcidNucleic;
 import Virus.Capsid;
 import Virus.Virus;
+import javafx.animation.*;
+import javafx.fxml.FXML;
+import javafx.util.Duration;
 
 public class CoronaVirus extends EnvelopeVirus {
 
@@ -40,5 +43,9 @@ public class CoronaVirus extends EnvelopeVirus {
 
 	public void setSpike(String spike) {
 		this.spike = spike;
+	}
+	@Override
+	public void attackCell() {
+
 	}
 }

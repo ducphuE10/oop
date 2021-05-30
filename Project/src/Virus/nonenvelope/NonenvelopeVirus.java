@@ -7,4 +7,8 @@ public class NonenvelopeVirus extends Virus{
     public NonenvelopeVirus(double size, AcidNucleic typeOfAcidNucleic, Capsid typeOfNucleocapsid) {
         super(size, typeOfAcidNucleic, typeOfNucleocapsid);
     }
+    @Override
+    public void attackCell() {
+
+    }
 }

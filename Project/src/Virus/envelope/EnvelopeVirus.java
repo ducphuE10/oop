@@ -2,7 +2,9 @@ package Virus.envelope;
 import Virus.Virus;
 import Virus.Capsid;
 import Virus.AcidNucleic;
-public class EnvelopeVirus extends Virus{
+import javafx.fxml.FXML;
+
+public abstract class EnvelopeVirus extends Virus{
     private Envelope envelopeOfVirus;
 
     public EnvelopeVirus(double size, AcidNucleic typeOfAcidNucleic, Capsid typeOfNucleocapsid, Envelope envelopeOfVirus) {
@@ -17,4 +19,11 @@ public class EnvelopeVirus extends Virus{
     public void setEnvelopeOfVirus(Envelope envelopeOfVirus) {
         this.envelopeOfVirus = envelopeOfVirus;
     }
+
+    @Override
+    public void attackCell() {
+
+    }
+
+
 }

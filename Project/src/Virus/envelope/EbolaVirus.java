@@ -6,7 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
 public class EbolaVirus extends EnvelopeVirus {
-    private Envelope envelopeOfVirus;
+//    private Envelope envelopeOfVirus;
     private String GlyProtein;
     private String Nucleprotein;
     private String RNA;
@@ -14,7 +14,6 @@ public class EbolaVirus extends EnvelopeVirus {
 
     public EbolaVirus(double size, AcidNucleic typeOfAcidNucleic, Capsid typeOfNucleocapsid, Envelope envelopeOfVirus,  String glyProtein, String nucleprotein, String RNA, String VP) {
         super(size, typeOfAcidNucleic, typeOfNucleocapsid, envelopeOfVirus);
-        this.envelopeOfVirus = envelopeOfVirus;
         GlyProtein = glyProtein;
         Nucleprotein = nucleprotein;
         this.RNA = RNA;
@@ -22,11 +21,11 @@ public class EbolaVirus extends EnvelopeVirus {
     }
 
     public Envelope getEnvelopeOfVirus() {
-        return envelopeOfVirus;
+        return super.getEnvelopeOfVirus();
     }
 
     public void setEnvelopeOfVirus(Envelope envelopeOfVirus) {
-        this.envelopeOfVirus = envelopeOfVirus;
+        super.setEnvelopeOfVirus(envelopeOfVirus);
     }
 
     public String getGlyProtein() {

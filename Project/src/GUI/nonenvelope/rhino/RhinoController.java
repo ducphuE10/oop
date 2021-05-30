@@ -42,7 +42,7 @@ public class RhinoController extends GeneralVirusController implements Initializ
     @FXML
     private Label setData;
     @FXML
-    private Button replay, animationButton;
+    private Button replay;
 
     //BACK TO MAIN MENU
     @Override
@@ -56,37 +56,17 @@ public class RhinoController extends GeneralVirusController implements Initializ
 
     //RUN ANIMATION
     @Override
-    public void animation(ActionEvent e) {
+    public void animation(ActionEvent e) throws IOException {
         super.animation(e);
-        replay.setVisible(true);
         try {
             mediaPlayer.stop();
         } catch (Exception e1) {
         }
-        rhino1.setOpacity(1);
-        rhino1.setTranslateX(0);
-        rhino1.setTranslateY(0);
-        rhino2.setOpacity(0);
-        rhino2.setTranslateX(0);
-        rhino2.setTranslateY(0);
-        rhino3.setOpacity(0);
-        rhino3.setTranslateX(0);
-        rhino3.setTranslateY(0);
-        rhino4.setOpacity(0);
-        rhino4.setTranslateX(0);
-        rhino4.setTranslateY(0);
-        ARN.setOpacity(0);
-        ARN.setTranslateX(0);
-        ARN.setTranslateY(0);
-        ARN.setOpacity(0);
-        ARN.setTranslateX(0);
-        cell1.setOpacity(1);
-        cell2.setOpacity(0);
     }
 
     @FXML
     public void runAnimation() {
-        animationButton.setDisable(true);
+
         replay.setVisible(false);
         replay.setText("Replay");
         rhino1.setOpacity(1);
@@ -167,7 +147,7 @@ public class RhinoController extends GeneralVirusController implements Initializ
                         tmARN11.play();
                         tmVirus41.setOnFinished(event5 -> {
                             replay.setVisible(true);
-                            animationButton.setDisable(false);
+
                         });
                     });
                 });

@@ -43,7 +43,7 @@ public class PolioController extends GeneralVirusController implements Initializ
     @FXML
     private Slider progress;
     @FXML                  
-    private Button replay,animationButton;
+    private Button replay;
     @FXML 
     private Label setData;
 
@@ -65,38 +65,17 @@ public class PolioController extends GeneralVirusController implements Initializ
 
 //RUN ANIMATION   
     @Override
-    public void animation(ActionEvent e){
+    public void animation(ActionEvent e) throws IOException {
     	super.animation(e);
-        replay.setVisible(true);
         replay.setText("PLAY");
         try {
         mediaPlayer.stop();
         } catch (Exception e1) {
         };
-        polio1.setOpacity(1);
-        polio1.setTranslateX(0);
-        polio1.setTranslateY(0);
-        polio2.setOpacity(0);
-        polio2.setTranslateX(0);
-        polio2.setTranslateY(0);
-        polio3.setOpacity(0);
-        polio3.setTranslateX(0);
-        polio3.setTranslateY(0);
-        polio4.setOpacity(0);
-        polio4.setTranslateX(0);
-        polio4.setTranslateY(0);
-        ARN1.setOpacity(0);
-        ARN1.setTranslateX(0);
-        ARN1.setTranslateY(0);
-        ARN2.setOpacity(0);
-        ARN2.setTranslateX(0);
-        cell1.setOpacity(1);
-        cell2.setOpacity(0);
 
     }
     @FXML
     public void runAnimation(){
-        animationButton.setDisable(true);
         polio1.setOpacity(1);
         polio1.setTranslateX(0);
         polio1.setTranslateY(0);
@@ -184,7 +163,6 @@ public class PolioController extends GeneralVirusController implements Initializ
                     	tmVirus41.play();
                     	tmVirus41.setOnFinished(event4->{
                     		replay.setVisible(true);
-                            animationButton.setDisable(false);
                     	});
                 	});
             	});

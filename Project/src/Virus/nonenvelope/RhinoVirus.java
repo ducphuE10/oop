@@ -17,4 +17,8 @@ public class RhinoVirus extends NonenvelopeVirus {
 	public void setSsRNAgen(String ssRNAgen) {
 		this.ssRNAgen = ssRNAgen;
 	}
+    @Override
+    public void attackCell() {
+
+    }
 }

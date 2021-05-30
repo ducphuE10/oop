@@ -22,6 +22,10 @@ public class PolioVirus extends NonenvelopeVirus{
 	public void setVPg(String vPg) {
 		VPg = vPg;
 	}
+	@Override
+	public void attackCell() {
+
+	}
     
     
 }

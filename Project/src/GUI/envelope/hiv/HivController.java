@@ -41,7 +41,7 @@ public class HivController extends GeneralVirusController implements Initializab
     @FXML
     private Label textExplain;
     @FXML
-    private Button play,animationButton;
+    private Button play;
 
 
     @Override
@@ -51,7 +51,6 @@ public class HivController extends GeneralVirusController implements Initializab
 //IMPLEMENT RUN ANIMATION
     @FXML
     public void runAnimation() {
-        animationButton.setDisable(true);
         play.setVisible(false);
         play.setText("Replay");
         hiv1.setOpacity(1);
@@ -128,7 +127,6 @@ public class HivController extends GeneralVirusController implements Initializab
         			tmVirusb41.play();
         			tmVirusb41.setOnFinished(event4->{
         				play.setVisible(true);
-                        animationButton.setDisable(false);
         			});
         		});
         	});
@@ -138,42 +136,13 @@ public class HivController extends GeneralVirusController implements Initializab
         phase1.play();
     }
 @Override
-	public void animation(ActionEvent e){
+	public void animation(ActionEvent e) throws IOException {
         super.animation(e);
         try {
             mediaPlayer.stop();
         } catch (Exception e1) {
         }
-        play.setVisible(true);
         play.setText("Play");
-        hiv1.setOpacity(1);
-        hiv1.setTranslateX(0);
-        hiv1.setTranslateY(0);
-        hiv2.setOpacity(0);
-        hiv2.setTranslateX(0);
-        hiv2.setTranslateY(0);
-        hiv3.setOpacity(0);
-        hiv3.setTranslateX(0);
-        hiv3.setTranslateY(0);
-
-        ARN.setOpacity(0);
-        ARN.setTranslateX(0);
-        ARN.setTranslateY(0);
-
-        cell.setOpacity(1);
-        hivb1.setOpacity(0);
-        hivb1.setTranslateX(0);
-        hivb1.setTranslateY(0);
-        hivb2.setOpacity(0);
-        hivb2.setTranslateX(0);
-        hivb2.setTranslateY(0);
-        hivb3.setOpacity(0);
-        hivb3.setTranslateX(0);
-        hivb3.setTranslateY(0);
-        hivb4.setOpacity(0);
-        hivb4.setTranslateX(0);
-        hivb4.setTranslateY(0);
-
     }
 
 

@@ -156,13 +156,14 @@ public class GeneralVirusController {
     
     //animation of virus
     @FXML
-    public void animation(ActionEvent e){
-
+    public void animation(ActionEvent e) throws IOException {
         media.setVisible(false);
         playingBar.setVisible(false);
         animationView.setVisible(true);
         structure.setVisible(false);
         collapse();
+
+
    }
     
     //video demonstrate virus

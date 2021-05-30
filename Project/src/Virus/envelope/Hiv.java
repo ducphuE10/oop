@@ -8,9 +8,8 @@ public class Hiv extends EnvelopeVirus{
     private String Gp41;
     private String HumanClass1;
     private String HumanClass2;
-    private String Integrase;
-    private Envelope envelopeOfVirus;
     private String Nucleocapsid;
+    private String Integrase;
     private String Protease;
     private String RNA;
     private String Reverse;
@@ -20,7 +19,6 @@ public class Hiv extends EnvelopeVirus{
 
     public Hiv(double size, AcidNucleic typeOfAcidNucleic, Capsid typeOfNucleocapsid, Envelope envelopeOfVirus, String gp120, String gp41, String humanClass1, String humanClass2, String integrase, String nucleocapsid, String protease, String RNA, String reverse,String MatrixProtein,String P79) {
         super(size, typeOfAcidNucleic, typeOfNucleocapsid, envelopeOfVirus);
-        this.envelopeOfVirus = envelopeOfVirus;
         Gp120 = gp120;
         Gp41 = gp41;
         HumanClass1 = humanClass1;
@@ -75,11 +73,11 @@ public class Hiv extends EnvelopeVirus{
     }
 
     public Envelope getEnvelopeOfVirus() {
-        return envelopeOfVirus;
+        return super.getEnvelopeOfVirus();
     }
 
     public void setEnvelopeOfVirus(Envelope envelopeOfVirus) {
-        this.envelopeOfVirus = envelopeOfVirus;
+        super.setEnvelopeOfVirus(envelopeOfVirus);
     }
 
     public String getNucleocapsid() {

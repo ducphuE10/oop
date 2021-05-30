@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import Main.Main;
 import GUI.GeneralVirusController;
 //import Virus.envelope.CoronaVirus;
+import Virus.envelope.EnvelopeVirus;
 import javafx.animation.*;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
@@ -21,7 +22,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
-import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
@@ -43,7 +43,7 @@ public class CovidController extends GeneralVirusController implements Initializ
     @FXML
     private Label setData;
     @FXML
-    private Button replay,animationButton;
+    private Button replay;
 
     
     @Override
@@ -53,23 +53,15 @@ public class CovidController extends GeneralVirusController implements Initializ
     
 //IMPLEMENT RUN ANIMATION
     @Override
-    public void animation(ActionEvent e) {
+    public void animation(ActionEvent e) throws IOException {
         replay.setText("PLAY"); 
         super.animation(e);
         try {
-            virus1.setTranslateX(0);
-            virus1.setRotate(0);
-            virus1.setTranslateY(0);
-            virus1.setOpacity(1);
-            virus2.setOpacity(0);
-            hostCell1.setOpacity(1);
-            hostCell2.setOpacity(0);
             mediaPlayer.stop();
         } catch (Exception e1) {
         }
     }
     public void runAnimation(){
-        animationButton.setDisable(true);
         replay.setVisible(false);
         replay.setText("Replay");
         virus1.setTranslateX(0);
@@ -94,7 +86,6 @@ public class CovidController extends GeneralVirusController implements Initializ
         pause.setOnFinished(event -> {
             tmVirus10.setOnFinished(event1 -> {
                 replay.setVisible(true);
-                animationButton.setDisable(false);
             });
 
             tmVirus10.play();

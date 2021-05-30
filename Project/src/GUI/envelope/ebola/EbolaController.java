@@ -40,7 +40,7 @@ public class EbolaController extends GeneralVirusController implements Initializ
     @FXML
     private Label textExplain;
     @FXML
-    private Button replay,animationButton;
+    private Button replay;
 
 
     @Override
@@ -62,34 +62,17 @@ public class EbolaController extends GeneralVirusController implements Initializ
 //RUN ANIMATION
 // IMPLEMENT RUN ANIMATION
     @Override
-    public void animation(ActionEvent e) {
+    public void animation(ActionEvent e) throws IOException {
         super.animation(e);
-        replay.setVisible(true);
         replay.setText("PLAY");
         try {
             mediaPlayer.stop();
-            virus1.setOpacity(1);
-            virus1.setTranslateX(0);
-            virus1.setTranslateY(0);
-            virus2.setOpacity(0);
-            virus2.setTranslateX(0);
-            virus2.setTranslateY(0);
-            virus2.setRotate(0);
-            virus3.setOpacity(0);
-            virus3.setTranslateX(0);
-            virus3.setTranslateY(0);
-            ARN.setOpacity(0);
-            ARN.setTranslateX(0);
-            ARN.setTranslateY(0);
-            cell1.setOpacity(1);
-            cell2.setOpacity(0);
         } catch (Exception e1) {
         	}
     }
     @FXML
 
     public void runAnimation(){
-        animationButton.setDisable(true);
         virus1.setOpacity(1);
         virus1.setTranslateX(0);
         virus1.setTranslateY(0);
@@ -151,7 +134,6 @@ public class EbolaController extends GeneralVirusController implements Initializ
                     phase4.setOnFinished(event3 -> {
                         tmVirus30.play();
                         replay.setVisible(true);
-                        animationButton.setDisable(false);
                     });
                     RotateTransition rotate2 = new RotateTransition();
                     rotate2.setDelay(Duration.millis(3000));
